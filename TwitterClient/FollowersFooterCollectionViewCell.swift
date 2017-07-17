@@ -8,16 +8,7 @@
 
 import UIKit
 
-class FollowersFooterCollectionViewCell: UICollectionViewCell {
- 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class FollowersFooterCollectionViewCell: BaseCollectionViewCell {
     
     let headerLable: UILabel = {
         let label = UILabel()
@@ -27,7 +18,7 @@ class FollowersFooterCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private func setupViews() {
+    override func setupViews() {
         
         addSubview(headerLable)
         headerLable.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, leadingConstant: 12)

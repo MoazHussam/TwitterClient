@@ -8,17 +8,8 @@
 
 import UIKit
 
-class FollowersHeaderCollectionViewCell: UICollectionViewCell {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+class FollowersHeaderCollectionViewCell: BaseCollectionViewCell {
+        
     let headerLable: UILabel = {
         let label = UILabel()
         label.text = "WHO YOU ARE FOLLOWING".localized
@@ -32,7 +23,7 @@ class FollowersHeaderCollectionViewCell: UICollectionViewCell {
         return lineView
     }()
     
-    private func setupViews() {
+    override func setupViews() {
         
         addSubview(headerLable)
         addSubview(sepratorLineView)

@@ -1,0 +1,43 @@
+//
+//  FollowerInfoCollectionViewCell.swift
+//  TwitterClient
+//
+//  Created by Moaz Ahmed on 7/17/17.
+//  Copyright © 2017 Moaz Ahmed. All rights reserved.
+//
+
+import UIKit
+
+class FollowerInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
+    
+    let tweetTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "Here goes the Tweets of the users.\nSome users may leave this field empty."
+        textView.backgroundColor = .cyan
+        textView.font = UIFont.systemFont(ofSize: 15)
+        textView.isEditable = false
+        textView.isSelectable = false
+        return textView
+    }()
+        
+    override func setupViews() {
+        
+        addSubview(profileImageView)
+        addSubview(nameLabel)
+        addSubview(handleLabel)
+        addSubview(tweetTextView)
+        addSubview(separatorLineView)
+        
+        backgroundColor = .orange
+        
+        profileImageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 50, heightConstant: 50)
+        nameLabel.anchor(top: profileImageView.topAnchor, leading: profileImageView.trailingAnchor, topConstant: 0, leadingConstant: 8)
+        handleLabel.anchor(top: nameLabel.topAnchor, leading: nameLabel.trailingAnchor, leadingConstant: 8)
+        handleLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -8).isActive = true
+        tweetTextView.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, topConstant: 0, bottomConstant: -4, trailingConstant: -8)
+        separatorLineView.anchor(leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, heightConstant: 0.5)
+        
+        
+    }
+    
+}

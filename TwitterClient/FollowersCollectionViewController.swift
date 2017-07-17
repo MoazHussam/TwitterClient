@@ -71,5 +71,14 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
         }
         
     }
+    
+    // MARK: - CollectionView Delegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let followersDetails = FollowerInfoCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        self.navigationController?.pushViewController(followersDetails, animated: true)
+        
+    }
 
 }
