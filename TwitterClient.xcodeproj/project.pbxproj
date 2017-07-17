@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		41F974941F1D1142007DF386 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974931F1D1142007DF386 /* AppDelegate.swift */; };
-		41F974961F1D1142007DF386 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974951F1D1142007DF386 /* ViewController.swift */; };
 		41F9749C1F1D1142007DF386 /* TwitterClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41F9749A1F1D1142007DF386 /* TwitterClient.xcdatamodeld */; };
 		41F9749E1F1D1142007DF386 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F9749D1F1D1142007DF386 /* Assets.xcassets */; };
 		41F974A11F1D1142007DF386 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F9749F1F1D1142007DF386 /* LaunchScreen.storyboard */; };
 		41F974AC1F1D1142007DF386 /* TwitterClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974AB1F1D1142007DF386 /* TwitterClientTests.swift */; };
+		41F974B71F1D12AD007DF386 /* FollowersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974B61F1D12AD007DF386 /* FollowersCollectionViewController.swift */; };
+		41F974B91F1D12DC007DF386 /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974B81F1D12DC007DF386 /* FollowerCollectionViewCell.swift */; };
+		41F974BB1F1D1316007DF386 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974BA1F1D1316007DF386 /* UIView+Anchors.swift */; };
+		41F974CE1F1D138B007DF386 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974CA1F1D138B007DF386 /* ReusableView.swift */; };
+		41F974CF1F1D138B007DF386 /* UICollectionView+ResusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974CB1F1D138B007DF386 /* UICollectionView+ResusableCell.swift */; };
+		41F974D01F1D138B007DF386 /* UICollectionViewCell+ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974CC1F1D138B007DF386 /* UICollectionViewCell+ReusableView.swift */; };
+		41F974D51F1D143E007DF386 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974D41F1D143D007DF386 /* NibLoadableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +34,6 @@
 /* Begin PBXFileReference section */
 		41F974901F1D1142007DF386 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F974931F1D1142007DF386 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		41F974951F1D1142007DF386 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41F9749B1F1D1142007DF386 /* TwitterClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwitterClient.xcdatamodel; sourceTree = "<group>"; };
 		41F9749D1F1D1142007DF386 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41F974A01F1D1142007DF386 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +41,13 @@
 		41F974A71F1D1142007DF386 /* TwitterClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F974AB1F1D1142007DF386 /* TwitterClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterClientTests.swift; sourceTree = "<group>"; };
 		41F974AD1F1D1142007DF386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F974B61F1D12AD007DF386 /* FollowersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersCollectionViewController.swift; sourceTree = "<group>"; };
+		41F974B81F1D12DC007DF386 /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
+		41F974BA1F1D1316007DF386 /* UIView+Anchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
+		41F974CA1F1D138B007DF386 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		41F974CB1F1D138B007DF386 /* UICollectionView+ResusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ResusableCell.swift"; sourceTree = "<group>"; };
+		41F974CC1F1D138B007DF386 /* UICollectionViewCell+ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+ReusableView.swift"; sourceTree = "<group>"; };
+		41F974D41F1D143D007DF386 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +90,13 @@
 			isa = PBXGroup;
 			children = (
 				41F974931F1D1142007DF386 /* AppDelegate.swift */,
-				41F974951F1D1142007DF386 /* ViewController.swift */,
 				41F9749D1F1D1142007DF386 /* Assets.xcassets */,
 				41F9749F1F1D1142007DF386 /* LaunchScreen.storyboard */,
 				41F974A21F1D1142007DF386 /* Info.plist */,
 				41F9749A1F1D1142007DF386 /* TwitterClient.xcdatamodeld */,
+				41F974D11F1D13BD007DF386 /* Extensions */,
+				41F974B61F1D12AD007DF386 /* FollowersCollectionViewController.swift */,
+				41F974B81F1D12DC007DF386 /* FollowerCollectionViewCell.swift */,
 			);
 			path = TwitterClient;
 			sourceTree = "<group>";
@@ -94,6 +108,18 @@
 				41F974AD1F1D1142007DF386 /* Info.plist */,
 			);
 			path = TwitterClientTests;
+			sourceTree = "<group>";
+		};
+		41F974D11F1D13BD007DF386 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				41F974CA1F1D138B007DF386 /* ReusableView.swift */,
+				41F974CB1F1D138B007DF386 /* UICollectionView+ResusableCell.swift */,
+				41F974CC1F1D138B007DF386 /* UICollectionViewCell+ReusableView.swift */,
+				41F974D41F1D143D007DF386 /* NibLoadableView.swift */,
+				41F974BA1F1D1316007DF386 /* UIView+Anchors.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +226,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F974D01F1D138B007DF386 /* UICollectionViewCell+ReusableView.swift in Sources */,
+				41F974B91F1D12DC007DF386 /* FollowerCollectionViewCell.swift in Sources */,
 				41F9749C1F1D1142007DF386 /* TwitterClient.xcdatamodeld in Sources */,
-				41F974961F1D1142007DF386 /* ViewController.swift in Sources */,
+				41F974D51F1D143E007DF386 /* NibLoadableView.swift in Sources */,
+				41F974BB1F1D1316007DF386 /* UIView+Anchors.swift in Sources */,
+				41F974CF1F1D138B007DF386 /* UICollectionView+ResusableCell.swift in Sources */,
 				41F974941F1D1142007DF386 /* AppDelegate.swift in Sources */,
+				41F974CE1F1D138B007DF386 /* ReusableView.swift in Sources */,
+				41F974B71F1D12AD007DF386 /* FollowersCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
