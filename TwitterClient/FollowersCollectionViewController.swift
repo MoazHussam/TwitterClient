@@ -16,19 +16,14 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
         self.collectionView!.registerCellClass(FollowerCollectionViewCell.self)
         self.collectionView!.registerHeaderClass(FollowersHeaderCollectionViewCell.self)
         self.collectionView!.registerFooterClass(FollowersFooterCollectionViewCell.self)
-        collectionView?.backgroundColor = UIColor.white
+        collectionView?.backgroundColor = UIColor.groupTableViewBackground
 
     }
-
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        if kind == UICollectionElementKindSectionHeader {
-            let header = collectionView.dequeueReusableHeader(forIndexPath: indexPath) as FollowersHeaderCollectionViewCell
-            return header
-        } else {
-            let footer = collectionView.dequeueReusableFooter(forIndexPath: indexPath) as FollowersFooterCollectionViewCell
-            return footer
-        }
+    
+    // MARK: - CollectionView Delegate FlowLayout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     
@@ -61,6 +56,20 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 150)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionElementKindSectionHeader {
+            let header = collectionView.dequeueReusableHeader(forIndexPath: indexPath) as FollowersHeaderCollectionViewCell
+            header.backgroundColor = .white
+            return header
+        } else {
+            let footer = collectionView.dequeueReusableFooter(forIndexPath: indexPath) as FollowersFooterCollectionViewCell
+            footer.backgroundColor = .white
+            return footer
+        }
+        
     }
 
 }
