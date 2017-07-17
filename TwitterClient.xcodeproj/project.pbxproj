@@ -19,6 +19,10 @@
 		41F974CF1F1D138B007DF386 /* UICollectionView+ResusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974CB1F1D138B007DF386 /* UICollectionView+ResusableCell.swift */; };
 		41F974D01F1D138B007DF386 /* UICollectionViewCell+ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974CC1F1D138B007DF386 /* UICollectionViewCell+ReusableView.swift */; };
 		41F974D51F1D143E007DF386 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974D41F1D143D007DF386 /* NibLoadableView.swift */; };
+		41F974D71F1D257E007DF386 /* FollowersHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974D61F1D257E007DF386 /* FollowersHeaderCollectionViewCell.swift */; };
+		41F974D91F1D2B15007DF386 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974D81F1D2B15007DF386 /* String+Localization.swift */; };
+		41F974DB1F1D2BAA007DF386 /* FollowersFooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974DA1F1D2BAA007DF386 /* FollowersFooterCollectionViewCell.swift */; };
+		41F974DD1F1D2BEF007DF386 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974DC1F1D2BEF007DF386 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		41F974CB1F1D138B007DF386 /* UICollectionView+ResusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ResusableCell.swift"; sourceTree = "<group>"; };
 		41F974CC1F1D138B007DF386 /* UICollectionViewCell+ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+ReusableView.swift"; sourceTree = "<group>"; };
 		41F974D41F1D143D007DF386 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		41F974D61F1D257E007DF386 /* FollowersHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		41F974D81F1D2B15007DF386 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		41F974DA1F1D2BAA007DF386 /* FollowersFooterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersFooterCollectionViewCell.swift; sourceTree = "<group>"; };
+		41F974DC1F1D2BEF007DF386 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,9 @@
 				41F974D11F1D13BD007DF386 /* Extensions */,
 				41F974B61F1D12AD007DF386 /* FollowersCollectionViewController.swift */,
 				41F974B81F1D12DC007DF386 /* FollowerCollectionViewCell.swift */,
+				41F974D61F1D257E007DF386 /* FollowersHeaderCollectionViewCell.swift */,
+				41F974DA1F1D2BAA007DF386 /* FollowersFooterCollectionViewCell.swift */,
+				41F974DC1F1D2BEF007DF386 /* Constants.swift */,
 			);
 			path = TwitterClient;
 			sourceTree = "<group>";
@@ -118,6 +129,7 @@
 				41F974CC1F1D138B007DF386 /* UICollectionViewCell+ReusableView.swift */,
 				41F974D41F1D143D007DF386 /* NibLoadableView.swift */,
 				41F974BA1F1D1316007DF386 /* UIView+Anchors.swift */,
+				41F974D81F1D2B15007DF386 /* String+Localization.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -227,10 +239,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				41F974D01F1D138B007DF386 /* UICollectionViewCell+ReusableView.swift in Sources */,
+				41F974DB1F1D2BAA007DF386 /* FollowersFooterCollectionViewCell.swift in Sources */,
+				41F974D91F1D2B15007DF386 /* String+Localization.swift in Sources */,
 				41F974B91F1D12DC007DF386 /* FollowerCollectionViewCell.swift in Sources */,
 				41F9749C1F1D1142007DF386 /* TwitterClient.xcdatamodeld in Sources */,
 				41F974D51F1D143E007DF386 /* NibLoadableView.swift in Sources */,
 				41F974BB1F1D1316007DF386 /* UIView+Anchors.swift in Sources */,
+				41F974DD1F1D2BEF007DF386 /* Constants.swift in Sources */,
+				41F974D71F1D257E007DF386 /* FollowersHeaderCollectionViewCell.swift in Sources */,
 				41F974CF1F1D138B007DF386 /* UICollectionView+ResusableCell.swift in Sources */,
 				41F974941F1D1142007DF386 /* AppDelegate.swift in Sources */,
 				41F974CE1F1D138B007DF386 /* ReusableView.swift in Sources */,

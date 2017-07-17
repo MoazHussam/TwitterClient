@@ -14,8 +14,8 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
         
         super.viewDidLoad()
         self.collectionView!.registerCellClass(FollowerCollectionViewCell.self)
-        self.collectionView!.registerHeaderClass(UICollectionViewCell.self)
-        self.collectionView!.registerFooterClass(UICollectionViewCell.self)
+        self.collectionView!.registerHeaderClass(FollowersHeaderCollectionViewCell.self)
+        self.collectionView!.registerFooterClass(FollowersFooterCollectionViewCell.self)
         collectionView?.backgroundColor = UIColor.white
 
     }
@@ -23,12 +23,10 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionElementKindSectionHeader {
-            let header = collectionView.dequeueReusableHeader(forIndexPath: indexPath)
-            header.backgroundColor = .blue
+            let header = collectionView.dequeueReusableHeader(forIndexPath: indexPath) as FollowersHeaderCollectionViewCell
             return header
         } else {
-            let footer = collectionView.dequeueReusableFooter(forIndexPath: indexPath)
-            footer.backgroundColor = .green
+            let footer = collectionView.dequeueReusableFooter(forIndexPath: indexPath) as FollowersFooterCollectionViewCell
             return footer
         }
     }
@@ -56,7 +54,7 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as FollowerCollectionViewCell
-        cell.nameLabel.text = "User \(indexPath.item + 1)"
+        cell.nameLabel.text = "\(cell.nameLabel.text ?? "") \(indexPath.item + 1)"
         return cell
         
     }

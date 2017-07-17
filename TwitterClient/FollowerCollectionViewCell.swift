@@ -17,28 +17,32 @@ class FollowerCollectionViewCell: UICollectionViewCell {
     
     let nameLabel: UILabel = {
         var label = UILabel()
-        label.text = "Test Test Test"
-        label.backgroundColor = .green
+        label.text = "FirstName LastName"
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
     let handleLabel: UILabel = {
         var label = UILabel()
         label.text = "@username"
-        label.backgroundColor = .purple
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = UIColor(colorLiteralRed: 130/256, green: 130/256, blue: 130/256, alpha: 1)
         return label
     }()
     
     let bioTextView: UITextView = {
         let textView = UITextView()
-        textView.text = "Test Test Test"
-        textView.backgroundColor = .yellow
+        textView.text = "Here goes the biography of the users./nSome users may leave this field empty."
+        textView.backgroundColor = .clear
+        textView.font = UIFont.systemFont(ofSize: 15)
         return textView
     }()
     
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.red
+        imageView.image = #imageLiteral(resourceName: "blank profile image")
+        imageView.layer.cornerRadius = 5
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
@@ -55,8 +59,8 @@ class FollowerCollectionViewCell: UICollectionViewCell {
         
         profileImageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 50, heightConstant: 50)
         nameLabel.anchor(top: profileImageView.topAnchor, leading: profileImageView.trailingAnchor, trailing: self.trailingAnchor, leadingConstant: 8, trailingConstant: -8)
-        handleLabel.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: nameLabel.trailingAnchor, topConstant: 8)
-        bioTextView.anchor(top: handleLabel.bottomAnchor, leading: handleLabel.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor)
+        handleLabel.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: nameLabel.trailingAnchor)
+        bioTextView.anchor(top: handleLabel.bottomAnchor, leading: handleLabel.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, topConstant: -4, leadingConstant: -4)
         
     }
 
