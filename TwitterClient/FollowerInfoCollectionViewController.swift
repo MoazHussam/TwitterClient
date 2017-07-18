@@ -16,7 +16,7 @@ class FollowerInfoCollectionViewController: UICollectionViewController, UICollec
         collectionView?.registerCellClass(FollowerInfoCollectionViewCell.self)
         collectionView?.registerHeaderClass(FollowerInfoHeaderCollectionViewCell.self)
         collectionView?.registerFooterClass(FollowersFooterCollectionViewCell.self)
-        collectionView?.backgroundColor = .groupTableViewBackground
+        collectionView?.backgroundColor = UIColor.groupTableViewBackground
     }
     
     // MARK: - CollectionView FlowLayout Delegate
@@ -51,11 +51,9 @@ class FollowerInfoCollectionViewController: UICollectionViewController, UICollec
         
         if kind == UICollectionElementKindSectionHeader {
             let header = collectionView.dequeueReusableHeader(forIndexPath: indexPath) as FollowerInfoHeaderCollectionViewCell
-            header.backgroundColor = .blue
             return header
         } else {
             let footer = collectionView.dequeueReusableFooter(forIndexPath: indexPath) as FollowersFooterCollectionViewCell
-            footer.backgroundColor = .gray
             return footer
         }
         

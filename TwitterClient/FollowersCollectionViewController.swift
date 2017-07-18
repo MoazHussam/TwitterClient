@@ -13,6 +13,7 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         self.collectionView!.registerCellClass(FollowerCollectionViewCell.self)
         self.collectionView!.registerHeaderClass(FollowersHeaderCollectionViewCell.self)
         self.collectionView!.registerFooterClass(FollowersFooterCollectionViewCell.self)
@@ -62,11 +63,9 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
         
         if kind == UICollectionElementKindSectionHeader {
             let header = collectionView.dequeueReusableHeader(forIndexPath: indexPath) as FollowersHeaderCollectionViewCell
-            header.backgroundColor = .white
             return header
         } else {
             let footer = collectionView.dequeueReusableFooter(forIndexPath: indexPath) as FollowersFooterCollectionViewCell
-            footer.backgroundColor = .white
             return footer
         }
         

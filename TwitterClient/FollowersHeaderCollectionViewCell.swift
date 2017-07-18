@@ -17,7 +17,7 @@ class FollowersHeaderCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
     
-    let sepratorLineView: UIView = {
+    let separatorLineView: UIView = {
         let lineView = UIView()
         lineView.backgroundColor = UIColor(colorLiteralRed: 230/256, green: 230/256, blue: 230/256, alpha: 1)
         return lineView
@@ -26,10 +26,12 @@ class FollowersHeaderCollectionViewCell: BaseCollectionViewCell {
     override func setupViews() {
         
         addSubview(headerLable)
-        addSubview(sepratorLineView)
+        addSubview(separatorLineView)
+        
+        backgroundColor = UIColor.green
         
         headerLable.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, leadingConstant: 12)
-        sepratorLineView.anchor(leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, heightConstant: 0.5)
+        separatorLineView.anchor(leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, heightConstant: 0.5)
         
     }
 }

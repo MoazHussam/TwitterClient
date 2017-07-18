@@ -21,6 +21,9 @@ class FollowersFooterCollectionViewCell: BaseCollectionViewCell {
     override func setupViews() {
         
         addSubview(headerLable)
+        
+        backgroundColor = .gray
+
         headerLable.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, leadingConstant: 12)
     }
     

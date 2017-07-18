@@ -39,13 +39,18 @@ class FollowerInfoHeaderCollectionViewCell: TwitterBaseCellCollectionViewCell {
         addSubview(nameLabel)
         addSubview(handleLabel)
         addSubview(bioTextView)
+        addSubview(separatorLineView)
+        
+        backgroundColor = .blue
         
         coverPhoto.anchor(top: self.topAnchor, leading: self.leadingAnchor, trailing: self.trailingAnchor, heightConstant: 150)
         profileImageView.anchor(top: coverPhoto.bottomAnchor, leading: self.leadingAnchor, topConstant: -20, leadingConstant: 12, widthConstant: 60, heightConstant: 60)
         nameLabel.anchor(top: profileImageView.bottomAnchor, leading: profileImageView.leadingAnchor, topConstant: 8)
-        handleLabel.anchor(top: nameLabel.topAnchor, leading: nameLabel.trailingAnchor, topConstant: 0, leadingConstant: 8)
+        handleLabel.anchor(leading: nameLabel.trailingAnchor, leadingConstant: 8)
+        handleLabel.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor).isActive = true
         handleLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -8).isActive = true
-        bioTextView.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, topConstant: 0, leadingConstant: 0, bottomConstant: -8, trailingConstant: -8)
+        bioTextView.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, topConstant: -6, leadingConstant: -4, bottomConstant: -8, trailingConstant: -8)
+        separatorLineView.anchor(leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, heightConstant: 0.5)
         
     }
 }
