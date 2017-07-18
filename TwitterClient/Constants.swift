@@ -14,4 +14,9 @@ struct Constants {
     struct Colors {
         static let twitterBlue = UIColor(colorLiteralRed: 61/256, green: 167/256, blue: 244/256, alpha: 1)
     }
+    
+    struct Strings {
+        static let twitterAPIKey = "FdE2cAr1c7IqJAvTdVxsBQjvP"
+        static let twitterSecretKey = "onvvw2gvcvCdkSqekP0KmUnaFgQKS42hhMIzz34k42WLIVbn5o"
+    }
 }
