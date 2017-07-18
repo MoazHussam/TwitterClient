@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2A0F88DFD134E3346EFB608E /* Pods_TwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060D458E61F328EC5F20E386 /* Pods_TwitterClient.framework */; };
-		411D94C61F1E6196007E3F11 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 411D94C51F1E6196007E3F11 /* Default-568h@2x.png */; };
 		416B23651F1E65590067FC3C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416B23641F1E65580067FC3C /* SafariServices.framework */; };
+		41A884AB1F1E7026006C8658 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A884AA1F1E7026006C8658 /* LoginViewController.swift */; };
+		41A884AD1F1E7708006C8658 /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A884AC1F1E7708006C8658 /* TwitterManager.swift */; };
 		41F974941F1D1142007DF386 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F974931F1D1142007DF386 /* AppDelegate.swift */; };
 		41F9749C1F1D1142007DF386 /* TwitterClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41F9749A1F1D1142007DF386 /* TwitterClient.xcdatamodeld */; };
 		41F9749E1F1D1142007DF386 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F9749D1F1D1142007DF386 /* Assets.xcassets */; };
@@ -46,8 +47,9 @@
 
 /* Begin PBXFileReference section */
 		060D458E61F328EC5F20E386 /* Pods_TwitterClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		411D94C51F1E6196007E3F11 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		416B23641F1E65580067FC3C /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		41A884AA1F1E7026006C8658 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		41A884AC1F1E7708006C8658 /* TwitterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
 		41F974901F1D1142007DF386 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F974931F1D1142007DF386 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41F9749B1F1D1142007DF386 /* TwitterClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwitterClient.xcdatamodel; sourceTree = "<group>"; };
@@ -126,7 +128,8 @@
 		41F974871F1D1142007DF386 = {
 			isa = PBXGroup;
 			children = (
-				411D94C51F1E6196007E3F11 /* Default-568h@2x.png */,
+				41A884AC1F1E7708006C8658 /* TwitterManager.swift */,
+				41A884AA1F1E7026006C8658 /* LoginViewController.swift */,
 				41F974921F1D1142007DF386 /* TwitterClient */,
 				41F974AA1F1D1142007DF386 /* TwitterClientTests */,
 				41F974911F1D1142007DF386 /* Products */,
@@ -297,7 +300,6 @@
 			files = (
 				41F974A11F1D1142007DF386 /* LaunchScreen.storyboard in Resources */,
 				41F9749E1F1D1142007DF386 /* Assets.xcassets in Resources */,
-				411D94C61F1E6196007E3F11 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,10 +414,12 @@
 				41F974DB1F1D2BAA007DF386 /* UsersViewControllerFooter.swift in Sources */,
 				41F974E11F1D3E6E007DF386 /* UserInfoViewController.swift in Sources */,
 				41F974D91F1D2B15007DF386 /* String+Localization.swift in Sources */,
+				41A884AB1F1E7026006C8658 /* LoginViewController.swift in Sources */,
 				41F974B91F1D12DC007DF386 /* UserCollectionViewCell.swift in Sources */,
 				41F974EA1F1D4B4A007DF386 /* TwitterBaseCellCollectionViewCell.swift in Sources */,
 				41F9749C1F1D1142007DF386 /* TwitterClient.xcdatamodeld in Sources */,
 				41F974D51F1D143E007DF386 /* NibLoadableView.swift in Sources */,
+				41A884AD1F1E7708006C8658 /* TwitterManager.swift in Sources */,
 				41F974BB1F1D1316007DF386 /* UIView+Anchors.swift in Sources */,
 				41F974DD1F1D2BEF007DF386 /* Constants.swift in Sources */,
 				41F974E51F1D3ED5007DF386 /* BaseCollectionViewCell.swift in Sources */,

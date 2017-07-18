@@ -17,16 +17,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        
         Twitter.sharedInstance().start(withConsumerKey:Constants.Strings.twitterAPIKey, consumerSecret:Constants.Strings.twitterSecretKey)
+        
+        initiateScreen(withRootViewController: self.rootViewController)
+        
+        return true
+    }
+    
+    var rootViewController: UIViewController {
+        
+        var rootVC = UIViewController()
+        
+        if TwitterManager.shared.isLoggedIn {
+            let flowLayout = UICollectionViewFlowLayout()
+            let followersController = UsersViewController(collectionViewLayout: flowLayout)
+            rootVC = UINavigationController(rootViewController: followersController)
+        } else {
+            rootVC = LoginViewController()
+        }
+        
+        return rootVC
+        
+    }
+    
+    func initiateScreen(withRootViewController rootViewController: UIViewController) {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let flowLayout = UICollectionViewFlowLayout()
-        let followersController = UsersViewController(collectionViewLayout: flowLayout)
-        window?.rootViewController = UINavigationController(rootViewController: followersController)
-
-        return true
+        window?.rootViewController = rootViewController
+        
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
