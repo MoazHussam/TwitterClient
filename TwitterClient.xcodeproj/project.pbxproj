@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A0F88DFD134E3346EFB608E /* Pods_TwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060D458E61F328EC5F20E386 /* Pods_TwitterClient.framework */; };
+		411D94C81F1E8AB1007E3F11 /* TwitterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D94C71F1E8AB1007E3F11 /* TwitterAPI.swift */; };
 		416B23651F1E65590067FC3C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416B23641F1E65580067FC3C /* SafariServices.framework */; };
 		41A884AB1F1E7026006C8658 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A884AA1F1E7026006C8658 /* LoginViewController.swift */; };
 		41A884AD1F1E7708006C8658 /* TwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A884AC1F1E7708006C8658 /* TwitterManager.swift */; };
@@ -47,9 +48,10 @@
 
 /* Begin PBXFileReference section */
 		060D458E61F328EC5F20E386 /* Pods_TwitterClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		411D94C71F1E8AB1007E3F11 /* TwitterAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPI.swift; sourceTree = "<group>"; };
 		416B23641F1E65580067FC3C /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		41A884AA1F1E7026006C8658 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		41A884AC1F1E7708006C8658 /* TwitterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterManager.swift; sourceTree = "<group>"; };
+		41A884AA1F1E7026006C8658 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		41A884AC1F1E7708006C8658 /* TwitterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TwitterManager.swift; path = ../TwitterManager.swift; sourceTree = "<group>"; };
 		41F974901F1D1142007DF386 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F974931F1D1142007DF386 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41F9749B1F1D1142007DF386 /* TwitterClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwitterClient.xcdatamodel; sourceTree = "<group>"; };
@@ -128,8 +130,6 @@
 		41F974871F1D1142007DF386 = {
 			isa = PBXGroup;
 			children = (
-				41A884AC1F1E7708006C8658 /* TwitterManager.swift */,
-				41A884AA1F1E7026006C8658 /* LoginViewController.swift */,
 				41F974921F1D1142007DF386 /* TwitterClient */,
 				41F974AA1F1D1142007DF386 /* TwitterClientTests */,
 				41F974911F1D1142007DF386 /* Products */,
@@ -160,7 +160,10 @@
 				41F974DC1F1D2BEF007DF386 /* Constants.swift */,
 				41F974E61F1D4245007DF386 /* User Info */,
 				41F974E41F1D3ED5007DF386 /* BaseCollectionViewCell.swift */,
+				41A884AC1F1E7708006C8658 /* TwitterManager.swift */,
+				41A884AA1F1E7026006C8658 /* LoginViewController.swift */,
 				41F974E91F1D4B4A007DF386 /* TwitterBaseCellCollectionViewCell.swift */,
+				411D94C71F1E8AB1007E3F11 /* TwitterAPI.swift */,
 			);
 			path = TwitterClient;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				41F974D71F1D257E007DF386 /* UsersViewControllerHeader.swift in Sources */,
 				41F974CF1F1D138B007DF386 /* UICollectionView+ResusableCell.swift in Sources */,
 				41F974941F1D1142007DF386 /* AppDelegate.swift in Sources */,
+				411D94C81F1E8AB1007E3F11 /* TwitterAPI.swift in Sources */,
 				41F974CE1F1D138B007DF386 /* ReusableView.swift in Sources */,
 				41F974E81F1D4261007DF386 /* UserInfoViewControllerHeader.swift in Sources */,
 				41F974E31F1D3EB9007DF386 /* UserInfoCollectionViewCell.swift in Sources */,
