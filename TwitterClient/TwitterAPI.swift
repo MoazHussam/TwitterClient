@@ -32,7 +32,10 @@ extension TwitterAPI: TargetType {
     }
     
     var parameters: [String: Any]? {
-        return nil
+        switch self {
+        case .oauth:
+            return [Constants.TwitterAPI.ParameterKeys.tokenAuthorize:"Basic \(encodedAuthenticationkeys)", Constants.TwitterAPI.ParameterKeys.grantTypeKey:Constants.TwitterAPI.ParameterValues.grantTypeValue]
+        }
     }
     
     var parameterEncoding: ParameterEncoding {
@@ -40,12 +43,18 @@ extension TwitterAPI: TargetType {
     }
     
     var sampleData: Data {
-            return "Half measures are as bad as nothing at all.".data(using: .utf8)!
+            return "{\"token_type\":\"bearer\",\"access_token\":\"AAAAAAAAAAAAAAAAAAAAANM81gAAAAAAPIcixaUYOt9ggvt3eQy80I1nY7k%3DhgMkFjeq3h6GMSMJRKQU0zxC3WmIEx0tLmJCyPE2POYirdQlU4\"}".data(using: .utf8)!
     }
     
     var task: Task {
         return .request
     }
 
-    
+    var encodedAuthenticationkeys: String {
+        
+        let tokenCredentials = Constants.TwitterAPI.twitterAPIKey + ":" + Constants.TwitterAPI.twitterSecretKey
+        let credentialsData = Data(base64Encoded: tokenCredentials)!
+        return String(data: credentialsData, encoding: .utf8)!
+        
+    }
 }

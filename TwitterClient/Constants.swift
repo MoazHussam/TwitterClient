@@ -16,17 +16,28 @@ struct Constants {
     }
     
     struct Strings {
-        static let twitterAPIKey = "FdE2cAr1c7IqJAvTdVxsBQjvP"
-        static let twitterSecretKey = "onvvw2gvcvCdkSqekP0KmUnaFgQKS42hhMIzz34k42WLIVbn5o"
     }
     
     struct TwitterAPI {
         
         static let baseURL = "https://api.twitter.com"
+        static let twitterAPIKey = "FdE2cAr1c7IqJAvTdVxsBQjvP"
+        static let twitterSecretKey = "onvvw2gvcvCdkSqekP0KmUnaFgQKS42hhMIzz34k42WLIVbn5o"
         
         struct Methods {
             
             static let oauthPath = "oauth2/token"
+        }
+        
+        struct ParameterKeys {
+            
+            static let tokenAuthorize = "Authorize"
+            static let grantTypeKey = "grant_type"
+        }
+        
+        struct ParameterValues {
+            
+            static let grantTypeValue = "client_credentials"
         }
     }
 }

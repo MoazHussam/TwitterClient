@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        Twitter.sharedInstance().start(withConsumerKey:Constants.Strings.twitterAPIKey, consumerSecret:Constants.Strings.twitterSecretKey)
+        Twitter.sharedInstance().start(withConsumerKey:Constants.TwitterAPI.twitterAPIKey, consumerSecret:Constants.TwitterAPI.twitterSecretKey)
         
         initiateScreen(withRootViewController: self.rootViewController)
         
