@@ -8,14 +8,14 @@
 
 import UIKit
 
-class FollowerInfoCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class UserInfoViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView?.registerCellClass(FollowerInfoCollectionViewCell.self)
-        collectionView?.registerHeaderClass(FollowerInfoHeaderCollectionViewCell.self)
-        collectionView?.registerFooterClass(FollowersFooterCollectionViewCell.self)
+        collectionView?.registerCellClass(UserInfoCollectionViewCell.self)
+        collectionView?.registerHeaderClass(UserInfoViewControllerHeader.self)
+        collectionView?.registerFooterClass(UsersViewControllerFooter.self)
         collectionView?.backgroundColor = UIColor.groupTableViewBackground
     }
     
@@ -41,7 +41,7 @@ class FollowerInfoCollectionViewController: UICollectionViewController, UICollec
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as FollowerInfoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as UserInfoCollectionViewCell
     
         return cell
         
@@ -50,10 +50,10 @@ class FollowerInfoCollectionViewController: UICollectionViewController, UICollec
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionElementKindSectionHeader {
-            let header = collectionView.dequeueReusableHeader(forIndexPath: indexPath) as FollowerInfoHeaderCollectionViewCell
+            let header = collectionView.dequeueReusableHeader(forIndexPath: indexPath) as UserInfoViewControllerHeader
             return header
         } else {
-            let footer = collectionView.dequeueReusableFooter(forIndexPath: indexPath) as FollowersFooterCollectionViewCell
+            let footer = collectionView.dequeueReusableFooter(forIndexPath: indexPath) as UsersViewControllerFooter
             return footer
         }
         

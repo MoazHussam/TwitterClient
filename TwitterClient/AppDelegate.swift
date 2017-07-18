@@ -23,10 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         let flowLayout = UICollectionViewFlowLayout()
-        let followersController = FollowersCollectionViewController(collectionViewLayout: flowLayout)
+        let followersController = UsersViewController(collectionViewLayout: flowLayout)
         window?.rootViewController = UINavigationController(rootViewController: followersController)
 
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return Twitter.sharedInstance().application(app, open: url, options: options)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -8,15 +8,15 @@
 
 import UIKit
 
-class FollowersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class UsersViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        self.collectionView!.registerCellClass(FollowerCollectionViewCell.self)
-        self.collectionView!.registerHeaderClass(FollowersHeaderCollectionViewCell.self)
-        self.collectionView!.registerFooterClass(FollowersFooterCollectionViewCell.self)
+        self.collectionView!.registerCellClass(UserCollectionViewCell.self)
+        self.collectionView!.registerHeaderClass(UsersViewControllerHeader.self)
+        self.collectionView!.registerFooterClass(UsersViewControllerFooter.self)
         collectionView?.backgroundColor = UIColor.groupTableViewBackground
 
     }
@@ -49,7 +49,7 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as FollowerCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as UserCollectionViewCell
         cell.nameLabel.text = "\(cell.nameLabel.text ?? "") \(indexPath.item + 1)"
         return cell
         
@@ -62,10 +62,10 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionElementKindSectionHeader {
-            let header = collectionView.dequeueReusableHeader(forIndexPath: indexPath) as FollowersHeaderCollectionViewCell
+            let header = collectionView.dequeueReusableHeader(forIndexPath: indexPath) as UsersViewControllerHeader
             return header
         } else {
-            let footer = collectionView.dequeueReusableFooter(forIndexPath: indexPath) as FollowersFooterCollectionViewCell
+            let footer = collectionView.dequeueReusableFooter(forIndexPath: indexPath) as UsersViewControllerFooter
             return footer
         }
         
@@ -75,7 +75,7 @@ class FollowersCollectionViewController: UICollectionViewController, UICollectio
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let followersDetails = FollowerInfoCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let followersDetails = UserInfoViewController(collectionViewLayout: UICollectionViewFlowLayout())
         self.navigationController?.pushViewController(followersDetails, animated: true)
         
     }

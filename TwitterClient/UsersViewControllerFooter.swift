@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FollowersFooterCollectionViewCell: BaseCollectionViewCell {
+class UsersViewControllerFooter: BaseCollectionViewCell {
     
     let headerLable: UILabel = {
         let label = UILabel()

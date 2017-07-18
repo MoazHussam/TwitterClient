@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FollowerInfoHeaderCollectionViewCell: TwitterBaseCellCollectionViewCell {
+class UserInfoViewControllerHeader: TwitterBaseCellCollectionViewCell {
     
     
     let coverPhoto: UIImageView = {

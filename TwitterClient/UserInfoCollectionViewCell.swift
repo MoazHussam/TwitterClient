@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FollowerInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
+class UserInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
     
     let tweetTextView: UITextView = {
         let textView = UITextView()
