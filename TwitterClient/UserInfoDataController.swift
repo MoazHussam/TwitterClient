@@ -10,8 +10,15 @@ import Foundation
 
 class UserInfoDataController {
     
+    var apiClient = TweetsAPIClient()
+    
     func tweets(forUser user: TwitterUser, completion: (TwitterAPIError? ,[Tweet]?) -> Void) {
         completion(nil, initializeWithDummyData(withTweeter: user))
+        
+        apiClient.getTweets(forUserID: "") { (error, tweets) in
+            
+            
+        }
     }
     
     

@@ -48,7 +48,7 @@ class TwitterAPIClientTests: XCTestCase {
         
         let expectation = self.expectation(description: "Wait for Moonshot Method Call")
         mockClient.webServiceProvider = getStubProvider(WithStatusCode: 400, withNetworkError: nil)
-        mockClient.performTwitterAPI(method: .oauth) { (token, error) in
+        mockClient.performTwitterAPI(method: .oauth) { (response, error) in
             XCTAssertEqual(error, TwitterAPIError.badRequest)
             expectation.fulfill()
         }
@@ -60,8 +60,9 @@ class TwitterAPIClientTests: XCTestCase {
         
         let expectation = self.expectation(description: "Wait for Moonshot Method Call")
         mockClient.webServiceProvider = getStubProvider(WithStatusCode: 200, withNetworkError: NSError())
-        mockClient.performTwitterAPI(method: .oauth) { (token, error) in
+        mockClient.performTwitterAPI(method: .oauth) { (response, error) in
             XCTAssertEqual(error, TwitterAPIError.networkError)
+            XCTAssertNil(response)
             expectation.fulfill()
         }
         self.waitForExpectations(timeout: 10, handler: nil)
@@ -74,18 +75,21 @@ class TwitterAPIClientTests: XCTestCase {
         let expectation2 = self.expectation(description: "Wait for Twitter Method Call")
         let expectation3 = self.expectation(description: "Wait for Twitter Method Call")
         mockClient.webServiceProvider = getStubProvider(WithStatusCode: 500, withNetworkError: nil)
-        mockClient.performTwitterAPI(method: .oauth) { (token, error) in
+        mockClient.performTwitterAPI(method: .oauth) { (response, error) in
             XCTAssertEqual(error, TwitterAPIError.serverError)
+            XCTAssertNil(response)
             expectation1.fulfill()
         }
         mockClient.webServiceProvider = getStubProvider(WithStatusCode: 501, withNetworkError: nil)
-        mockClient.performTwitterAPI(method: .oauth) { (token, error) in
+        mockClient.performTwitterAPI(method: .oauth) { (response, error) in
             XCTAssertEqual(error, TwitterAPIError.serverError)
+            XCTAssertNil(response)
             expectation2.fulfill()
         }
         mockClient.webServiceProvider = getStubProvider(WithStatusCode: 599, withNetworkError: nil)
-        mockClient.performTwitterAPI(method: .oauth) { (token, error) in
+        mockClient.performTwitterAPI(method: .oauth) { (response, error) in
             XCTAssertEqual(error, TwitterAPIError.serverError)
+            XCTAssertNil(response)
             expectation3.fulfill()
         }
         self.waitForExpectations(timeout: 10, handler: nil)
