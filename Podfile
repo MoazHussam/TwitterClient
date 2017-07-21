@@ -11,6 +11,8 @@ pod 'Moya'
   target 'TwitterClientTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'TwitterKit'
+    pod 'Moya'
   end
 
 end

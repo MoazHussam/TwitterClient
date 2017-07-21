@@ -43,7 +43,7 @@ extension TwitterAPI: TargetType {
     }
     
     var sampleData: Data {
-            return "{\"token_type\":\"bearer\",\"access_token\":\"AAAAAAAAAAAAAAAAAAAAANM81gAAAAAAPIcixaUYOt9ggvt3eQy80I1nY7k%3DhgMkFjeq3h6GMSMJRKQU0zxC3WmIEx0tLmJCyPE2POYirdQlU4\"}".data(using: .utf8)!
+            return TwitterAPIDummyData.oauth
     }
     
     var task: Task {
@@ -53,8 +53,8 @@ extension TwitterAPI: TargetType {
     var encodedAuthenticationkeys: String {
         
         let tokenCredentials = Constants.TwitterAPI.twitterAPIKey + ":" + Constants.TwitterAPI.twitterSecretKey
-        let credentialsData = Data(base64Encoded: tokenCredentials)!
-        return String(data: credentialsData, encoding: .utf8)!
+        let credentialsData = tokenCredentials.data(using: String.Encoding.utf8, allowLossyConversion: true)!
+        return credentialsData.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
         
     }
 }
