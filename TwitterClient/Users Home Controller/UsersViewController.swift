@@ -10,10 +10,17 @@ import UIKit
 
 class UsersViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    // MARK: - Model
+    
+    var tweeters: [TwitterUser]?
+    var dataController = UsersDataController()
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        self.initializeData()
         self.collectionView!.registerCellClass(UserCollectionViewCell.self)
         self.collectionView!.registerHeaderClass(UsersViewControllerHeader.self)
         self.collectionView!.registerFooterClass(UsersViewControllerFooter.self)
@@ -44,13 +51,15 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return tweeters?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as UserCollectionViewCell
-        cell.nameLabel.text = "\(cell.nameLabel.text ?? "") \(indexPath.item + 1)"
+        let index = indexPath.item
+        let tweeter = tweeters?[index]
+        cell.tweeter = tweeter
         return cell
         
     }
@@ -76,7 +85,27 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let followersDetails = UserInfoViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        followersDetails.user = tweeters?[indexPath.item]
         self.navigationController?.pushViewController(followersDetails, animated: true)
+        
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func initializeData() {
+        
+        dataController.getFollowers { (error, followers) in
+            
+            if let error = error {
+                print("Retreaving followers failed")
+            } else {
+                guard let followers = followers else {
+                    fatalError("UsersDataController class is misconfigured")
+                }
+                self.tweeters = followers
+            }
+            
+        }
         
     }
 

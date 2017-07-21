@@ -10,6 +10,16 @@ import UIKit
 
 class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
         
+    var tweeter: TwitterUser? {
+        didSet {
+            nameLabel.text = tweeter?.name
+            handleLabel.text = tweeter?.handle
+//            profileImageView.image = UIImage()
+            bioTextView.text = tweeter?.bio
+
+        }
+    }
+    
     let bioTextView: UITextView = {
         let textView = UITextView()
         textView.text = "Here goes the biography of the users.\nSome users may leave this field empty."

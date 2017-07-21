@@ -10,6 +10,15 @@ import UIKit
 
 class UserInfoViewControllerHeader: TwitterBaseCellCollectionViewCell {
     
+    var user: TwitterUser? {
+        didSet {
+//            self.coverPhoto.image = user?.coverPhoto
+//            self.profileImageView.image = UIImage()
+            self.nameLabel.text = user?.name
+            self.handleLabel.text = user?.handle
+            self.bioTextView.text = user?.bio
+        }
+    }
     
     let coverPhoto: UIImageView = {
         let imageview = UIImageView()

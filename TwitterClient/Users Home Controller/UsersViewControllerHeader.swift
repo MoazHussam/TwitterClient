@@ -12,7 +12,7 @@ class UsersViewControllerHeader: BaseCollectionViewCell {
         
     let headerLable: UILabel = {
         let label = UILabel()
-        label.text = "WHO YOU ARE FOLLOWING".localized
+        label.text = "FOLLOWERS".localized
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()

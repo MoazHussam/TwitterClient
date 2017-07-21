@@ -9,6 +9,22 @@
 import UIKit
 
 class UserInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
+ 
+    var tweet: Tweet? {
+        didSet {
+            
+            if let tweet = self.tweet,
+                let tweeter = self.tweet?.tweeter {
+                self.tweetTextView.text = tweet.text
+                self.nameLabel.text = tweeter.name
+                self.handleLabel.text = tweeter.handle
+                //                self.profileImageView.image = UIImage()
+            } else {
+                return
+            }
+            
+        }
+    }
     
     let tweetTextView: UITextView = {
         let textView = UITextView()
