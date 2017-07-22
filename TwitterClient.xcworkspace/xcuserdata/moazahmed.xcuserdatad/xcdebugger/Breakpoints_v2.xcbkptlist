@@ -19,5 +19,101 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterClientTests/TweetsAPIClientTest.swift"
+            timestampString = "522403575.721029"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "test_callAcuallyRuns()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterClientTests.TweetsAPIClientTest.test_callAcuallyRuns () -&gt; ()"
+                  moduleName = "TwitterClientTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moazahmed/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/TwitterClient/TwitterClientTests/TweetsAPIClientTest.swift"
+                  timestampString = "522403652.449124"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "881">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterClientTests.TweetsAPIClientTest.(test_callAcuallyRuns () -&gt; ()).(closure #2)"
+                  moduleName = "TwitterClientTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moazahmed/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/TwitterClient/TwitterClientTests/TweetsAPIClientTest.swift"
+                  timestampString = "522403652.455154"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterClient/TweetsAPIClient.swift"
+            timestampString = "522403700.444984"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getTweets(forUserID:count:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterClient.TweetsAPIClient.getTweets (forUserID : Swift.String, count : Swift.Int, completion : (Swift.Optional&lt;TwitterClient.TwitterAPIError&gt;, Swift.Optional&lt;Swift.Array&lt;TwitterClient.Tweet&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TwitterClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moazahmed/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/TwitterClient/TwitterClient/TweetsAPIClient.swift"
+                  timestampString = "522403823.12278"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterClient.TweetsAPIClient.(getTweets (forUserID : Swift.String, count : Swift.Int, completion : (Swift.Optional&lt;TwitterClient.TwitterAPIError&gt;, Swift.Optional&lt;Swift.Array&lt;TwitterClient.Tweet&gt;&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "TwitterClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/moazahmed/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/TwitterClient/TwitterClient/TweetsAPIClient.swift"
+                  timestampString = "522403823.129489"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

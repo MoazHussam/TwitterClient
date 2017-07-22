@@ -29,7 +29,7 @@ struct Constants {
             
             static let oauthPath = "oauth2/token"
             static let getFollowers = "1.1/followers/list.json"
-            static let getTweets = "1.1/followers/list.json?"
+            static let getTweets = "1.1/statuses/user_timeline.json"
         }
         
         struct ParameterKeys {

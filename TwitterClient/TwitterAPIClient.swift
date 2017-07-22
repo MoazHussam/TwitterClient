@@ -20,7 +20,7 @@ extension TwitterAPIClient {
     
     func performTwitterAPI(method: TwitterAPI, completion: ((Data?, TwitterAPIError?) -> Void)?) {
         
-        webServiceProvider.request(.oauth) { (result) in
+        webServiceProvider.request(method) { (result) in
             var data: Data?
             var error: TwitterAPIError?
             switch result {

@@ -112,6 +112,26 @@ class TweetsAPIClientTest: XCTestCase {
 
     }
     
+    func test_GetTweetsCallAcuallyRuns() {
+        
+        let expectation = self.expectation(description: "wait for get wteets method")
+        let endpointClosure = { (target: TwitterAPI) -> Endpoint<TwitterAPI> in
+            let url = target.baseURL.appendingPathComponent(target.path).absoluteString
+            let endpoint = Endpoint<TwitterAPI>(url: url, sampleResponseClosure: {.networkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters)
+            return endpoint.adding(newHTTPHeaderFields: ["Authorization":"Bearer AAAAAAAAAAAAAAAAAAAAANM81gAAAAAAPIcixaUYOt9ggvt3eQy80I1nY7k%3DhgMkFjeq3h6GMSMJRKQU0zxC3WmIEx0tLmJCyPE2POYirdQlU4"])
+        }
+        mockClient.webServiceProvider = MoyaProvider<TwitterAPI>(endpointClosure: endpointClosure, plugins: [NetworkLoggerPlugin()])
+        
+        mockClient.getTweets(forUserID: "2833689646") { (error, tweets) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(tweets)
+            expectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: 10, handler: nil)
+        
+    }
+    
     
     // MARK: - helper methods
     
