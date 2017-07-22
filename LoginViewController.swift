@@ -28,7 +28,8 @@ class LoginViewController: UIViewController {
         let logInButton = TWTRLogInButton(logInCompletion: { [weak self] session, error in
             
             if let session  = session {
-                print("signed in as \(session.userName)");
+                print("signed in as \(session.userName)")
+                NotificationCenter.default.post(Constants.Notifications.userLoggedIn)
                 self?.lunchHomeViewController()
             } else if let error = error {
                 print("error: \(error.localizedDescription)");

@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var rootVC = UIViewController()
         
-        if TwitterManager.shared.isLoggedIn {
+        if TwitterLoginManager.shared.isLoggedIn {
             let flowLayout = UICollectionViewFlowLayout()
             let followersController = UsersViewController(collectionViewLayout: flowLayout)
             rootVC = UINavigationController(rootViewController: followersController)

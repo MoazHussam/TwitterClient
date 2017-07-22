@@ -44,7 +44,7 @@ class TwitterUsersAPIClientTests: XCTestCase {
         
     }
     
-    func test_GetTweetsCallAcuallyRuns() {
+    func test_GetTwitterUsersCallAcuallyRuns() {
         
         let expectation = self.expectation(description: "wait for get wteets method")
         let endpointClosure = { (target: TwitterAPI) -> Endpoint<TwitterAPI> in
@@ -58,6 +58,26 @@ class TwitterUsersAPIClientTests: XCTestCase {
             XCTAssertNil(error)
             XCTAssertNotNil(tweets)
             expectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: 10, handler: nil)
+        
+    }
+    
+    func test_getTwitterUsersGetsAuthorizedProperly() {
+        
+        let tokenExpectation = self.expectation(description: "wait for get tweets method")
+        mockClient.webServiceProvider = TwitterProviderFactory().defaultProvider
+        TwitterLoginManager.shared.getToken { (error) in
+            XCTAssertNil(error)
+            tokenExpectation.fulfill()
+        }
+        self.waitForExpectations(timeout: 10, handler: nil)
+        let methodExpectation = self.expectation(description: "wait for get tweets method")
+        mockClient.getFollowers(forUserID: "2833689646") { (error, tweeters) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(tweeters)
+            methodExpectation.fulfill()
         }
         
         self.waitForExpectations(timeout: 10, handler: nil)

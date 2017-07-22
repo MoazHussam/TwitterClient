@@ -31,9 +31,12 @@ extension TwitterAPIClient {
                 } else if response.statusCode == 400 {
                     data = nil
                     error = TwitterAPIError.badRequest
-                } else {
+                } else if 500...599 ~= response.statusCode {
                     data = nil
                     error = TwitterAPIError.serverError
+                } else {
+                    data = nil
+                    error = TwitterAPIError.generalError
                 }
             default:
                 data = nil

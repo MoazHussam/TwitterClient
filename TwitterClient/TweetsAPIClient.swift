@@ -11,7 +11,7 @@ import Moya
 
 class TweetsAPIClient: TwitterAPIClient {
     
-    var webServiceProvider: MoyaProvider<TwitterAPI> = MoyaProvider<TwitterAPI>()
+    var webServiceProvider: MoyaProvider<TwitterAPI> = TwitterProviderFactory().defaultProvider
     
     func getTweets(forUserID userID: String, count: Int = 10, completion: @escaping (TwitterAPIError?, [Tweet]?) -> Void) {
         

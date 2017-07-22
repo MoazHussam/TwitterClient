@@ -15,7 +15,9 @@ struct Constants {
         static let twitterBlue = UIColor(colorLiteralRed: 61/256, green: 167/256, blue: 244/256, alpha: 1)
     }
     
-    struct Strings {
+    struct Notifications {
+        static let userLoggedIn = Notification(name: Notification.Name(rawValue: "USER_LOGGED_IN"))
+        static let userLoggedOut = Notification(name: Notification.Name(rawValue: "USER_LOGGED_OUT"))
     }
     
     struct TwitterAPI {
@@ -24,7 +26,7 @@ struct Constants {
         static let twitterAPIKey = "FdE2cAr1c7IqJAvTdVxsBQjvP"
         static let twitterSecretKey = "onvvw2gvcvCdkSqekP0KmUnaFgQKS42hhMIzz34k42WLIVbn5o"
         static let dateFormat = "EEE MMM d HH:mm:ss ZZZ yyyy"
-
+        
         struct Methods {
             
             static let oauthPath = "oauth2/token"
@@ -34,7 +36,6 @@ struct Constants {
         
         struct ParameterKeys {
             
-            static let tokenAuthorize = "Authorize"
             static let grantTypeKey = "grant_type"
             static let cursor = "cursor"
             static let screenName = "screen_name"
@@ -50,6 +51,8 @@ struct Constants {
             static let bio = "description"
             static let coverPhoto = "profile_banner_url"
             static let profilePicture = "profile_image_url_https"
+            static let authorization = "Authorization"
+            static let accessToken = "access_token"
             
         }
         
@@ -57,5 +60,6 @@ struct Constants {
             
             static let grantTypeValue = "client_credentials"
         }
+        
     }
 }

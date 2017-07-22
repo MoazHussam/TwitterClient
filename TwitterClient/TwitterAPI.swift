@@ -43,7 +43,7 @@ extension TwitterAPI: TargetType {
         var parameters: [String:Any] = [:]
         switch self {
         case .oauth:
-            return [Constants.TwitterAPI.ParameterKeys.tokenAuthorize:"Basic \(encodedAuthenticationkeys)", Constants.TwitterAPI.ParameterKeys.grantTypeKey:Constants.TwitterAPI.ParameterValues.grantTypeValue]
+            return [Constants.TwitterAPI.ParameterKeys.grantTypeKey:Constants.TwitterAPI.ParameterValues.grantTypeValue]
         case .getFollowers(userID: let userID, screenName: let name, count: let count), .getTweets(userID: let userID, screenName: let name, count: let count):
             if let userID = userID {
                 parameters[Constants.TwitterAPI.ParameterKeys.userID] = userID
@@ -77,11 +77,4 @@ extension TwitterAPI: TargetType {
         return .request
     }
 
-    var encodedAuthenticationkeys: String {
-        
-        let tokenCredentials = Constants.TwitterAPI.twitterAPIKey + ":" + Constants.TwitterAPI.twitterSecretKey
-        let credentialsData = tokenCredentials.data(using: String.Encoding.utf8, allowLossyConversion: true)!
-        return credentialsData.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
-        
-    }
 }
