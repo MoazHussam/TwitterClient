@@ -12,13 +12,22 @@ class UserInfoDataController {
     
     var apiClient = TweetsAPIClient()
     
-    func tweets(forUser user: TwitterUser, completion: (TwitterAPIError? ,[Tweet]?) -> Void) {
-        completion(nil, initializeWithDummyData(withTweeter: user))
+    func tweets(forUser user: TwitterUser?, completion: @escaping (TwitterAPIError? ,[Tweet]?) -> Void) {
         
-        apiClient.getTweets(forUserID: "") { (error, tweets) in
-            
-            
+        if let userID = user?.id {
+            apiClient.getTweets(forUserID: userID, completion: { (error, tweets) in
+                
+                if let error = error {
+                    completion(error, nil)
+                } else {
+                    completion(nil, tweets)
+                }
+                
+            })
+        } else {
+            completion(.noUserIsSpecified, nil)
         }
+
     }
     
     

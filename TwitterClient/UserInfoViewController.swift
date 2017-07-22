@@ -12,7 +12,11 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
     
     // MARK - Model
 
-    var tweets: [Tweet]?
+    var tweets: [Tweet]? {
+        didSet {
+            collectionView?.reloadData()
+        }
+    }
     var dataController = UserInfoDataController()
     var user: TwitterUser? {
         didSet {
@@ -49,7 +53,7 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return tweets?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

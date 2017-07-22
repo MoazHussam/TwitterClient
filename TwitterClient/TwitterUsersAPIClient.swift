@@ -13,6 +13,7 @@ class TwitterUsersAPIClient: TwitterAPIClient {
     
     var webServiceProvider: MoyaProvider<TwitterAPI> = TwitterProviderFactory().defaultProvider
  
+    
     func getFollowers(forUserID userID: String, count: Int = 10, completion: @escaping (TwitterAPIError?, [TwitterUser]?) -> Void) {
         
         self.performTwitterAPI(method: .getFollowers(userID: userID, screenName: nil, count: count)) { (resultData, error) in

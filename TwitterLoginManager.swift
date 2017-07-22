@@ -80,6 +80,20 @@ class TwitterLoginManager: TwitterAPIClient {
         
     }
     
+    var currentLoggedInUser: TwitterUser? {
+        
+        var user: TwitterUser?
+        let store = Twitter.sharedInstance().sessionStore
+        let session = store.session()
+        if let session  = session {
+            user = TwitterUser(id: session.userID, handle: "", name: "")
+        } else {
+            user = nil
+        }
+        return user
+        
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

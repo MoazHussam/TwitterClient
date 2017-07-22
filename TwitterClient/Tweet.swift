@@ -30,7 +30,9 @@ class Tweet: NSManagedObject {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = Constants.TwitterAPI.dateFormat
         let date = dateFormatter.date(from: dateString)
-        self.init(id: id, text: text, created: date, tweeter: nil)
+        let tweeterJson = json[Constants.TwitterAPI.ParameterKeys.users]
+        let tweeter = TwitterUser(fromJsonObject: tweeterJson)
+        self.init(id: id, text: text, created: date, tweeter: tweeter)
 
     }
 

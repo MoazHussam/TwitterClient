@@ -11,9 +11,23 @@ import Foundation
 
 class UsersDataController {
     
-    func getFollowers(completion: (TwitterAPIError?, [TwitterUser]?) -> Void) {
+    var usersClient = TwitterUsersAPIClient()
+    
+    func getFollowers(forUser user: TwitterUser?, completion: @escaping (TwitterAPIError?, [TwitterUser]?) -> Void) {
         
-        completion(nil, initializeWithDummyData())
+        if let userID = user?.id {
+            usersClient.getFollowers(forUserID: userID, completion: { (error, tweeters) in
+                
+                if let error = error {
+                    completion(error, nil)
+                } else {
+                    completion(nil, tweeters)
+                }
+                
+            })
+        } else {
+            completion(.noUserIsSpecified, nil)
+        }
         
     }
     

@@ -8,7 +8,7 @@
 
 import Foundation
 import Moya
-struct AuthorizationPlugin: PluginType {
+class AuthorizationPlugin: PluginType {
     
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
         
@@ -20,8 +20,23 @@ struct AuthorizationPlugin: PluginType {
             
             if let token = Token.authToken {
                 request.addValue("Bearer \(token)", forHTTPHeaderField: Constants.TwitterAPI.ParameterKeys.authorization)
+                print("Token is inserted successfully")
             } else {
-                print("Can't Authoriza as there is no valid token")
+                print("Start semaphore")
+                let semaphore = DispatchSemaphore(value: 0)
+                TwitterLoginManager.shared.getToken(completion: { [weak self] (error) in
+                    
+                    if let error = error {
+                        print("Can't Authorize as there is no valid token.\nerror: \(error)")
+                    } else {
+                        request = self?.prepare(request, target: target) ?? request
+                        print("Ended attempt to fetch token")
+                    }
+                    semaphore.signal()
+                    print("Finish semaphore")
+                    
+                })
+                semaphore.wait()
             }
 
         }

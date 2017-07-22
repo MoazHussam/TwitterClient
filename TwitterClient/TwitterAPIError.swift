@@ -14,6 +14,7 @@ enum TwitterAPIError {
     case networkError
     case serverError
     case generalError
+    case noUserIsSpecified
 }
 
 //extension TwitterAPIError: Equatable {

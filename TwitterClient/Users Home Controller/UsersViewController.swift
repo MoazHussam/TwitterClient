@@ -12,7 +12,16 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
 
     // MARK: - Model
     
-    var tweeters: [TwitterUser]?
+    var followers: [TwitterUser]? {
+        didSet {
+            self.collectionView?.reloadData()
+        }
+    }
+    var user: TwitterUser? {
+        didSet {
+            self.initializeData()
+        }
+    }
     var dataController = UsersDataController()
     
     // MARK: - Lifecycle
@@ -20,7 +29,6 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.initializeData()
         self.collectionView!.registerCellClass(UserCollectionViewCell.self)
         self.collectionView!.registerHeaderClass(UsersViewControllerHeader.self)
         self.collectionView!.registerFooterClass(UsersViewControllerFooter.self)
@@ -51,14 +59,14 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tweeters?.count ?? 0
+        return followers?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as UserCollectionViewCell
         let index = indexPath.item
-        let tweeter = tweeters?[index]
+        let tweeter = followers?[index]
         cell.tweeter = tweeter
         return cell
         
@@ -85,7 +93,7 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let followersDetails = UserInfoViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        followersDetails.user = tweeters?[indexPath.item]
+        followersDetails.user = followers?[indexPath.item]
         self.navigationController?.pushViewController(followersDetails, animated: true)
         
     }
@@ -94,15 +102,15 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
     
     private func initializeData() {
         
-        dataController.getFollowers { (error, followers) in
+        dataController.getFollowers(forUser: user) { (error, followers) in
             
             if let error = error {
-                print("Retreaving followers failed")
+                print("Retreaving followers failed with error: \(error)")
             } else {
                 guard let followers = followers else {
                     fatalError("UsersDataController class is misconfigured")
                 }
-                self.tweeters = followers
+                self.followers = followers
             }
             
         }
