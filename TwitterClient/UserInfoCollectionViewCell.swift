@@ -18,7 +18,14 @@ class UserInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
                 self.tweetTextView.text = tweet.text
                 self.nameLabel.text = tweeter.name
                 self.handleLabel.text = tweeter.handle
-                //                self.profileImageView.image = UIImage()
+                
+                if let urlString = tweeter.profilePicture,
+                    let url = URL(string: urlString) {
+                    profileImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "blank profile image"))
+                } else {
+                    profileImageView.image = #imageLiteral(resourceName: "blank profile image")
+                }
+                
             } else {
                 return
             }
@@ -34,6 +41,8 @@ class UserInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
         textView.font = UIFont.systemFont(ofSize: 15)
         textView.isEditable = false
         textView.isSelectable = false
+        textView.isScrollEnabled = false
+        textView.isUserInteractionEnabled = false
         return textView
     }()
         
@@ -47,12 +56,13 @@ class UserInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
         
         backgroundColor = .orange
         
-        profileImageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 50, heightConstant: 50)
+        profileImageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 54, heightConstant: 54)
         nameLabel.anchor(top: profileImageView.topAnchor, leading: profileImageView.trailingAnchor, topConstant: 0, leadingConstant: 8)
         handleLabel.anchor(leading: nameLabel.trailingAnchor, leadingConstant: 8)
         handleLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -8).isActive = true
         handleLabel.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor).isActive = true
-        tweetTextView.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, topConstant: -6, leadingConstant: -4, bottomConstant: -4, trailingConstant: -8)
+        tweetTextView.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: self.trailingAnchor, topConstant: -6, leadingConstant: -4, trailingConstant: -8)
+        tweetTextView.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -4).isActive = true
         separatorLineView.anchor(leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, heightConstant: 0.5)
         
         

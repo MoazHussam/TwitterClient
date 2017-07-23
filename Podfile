@@ -6,6 +6,8 @@ target 'TwitterClient' do
     use_frameworks!
 pod 'TwitterKit'
 pod 'Moya'
+pod 'SwiftyJSON'
+pod 'AlamofireImage'
   # Pods for TwitterClient
 
   target 'TwitterClientTests' do
@@ -13,6 +15,8 @@ pod 'Moya'
     # Pods for testing
     pod 'TwitterKit'
     pod 'Moya'
+    pod 'SwiftyJSON'
+    pod 'AlamofireImage'
   end
 
 end

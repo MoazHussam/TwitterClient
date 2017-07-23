@@ -8,6 +8,7 @@
 
 import Foundation
 import Moya
+import SwiftyJSON
 
 class TweetsAPIClient: TwitterAPIClient {
     

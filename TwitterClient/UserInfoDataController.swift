@@ -19,8 +19,11 @@ class UserInfoDataController {
                 
                 if let error = error {
                     completion(error, nil)
-                } else {
+                } else if let tweets = tweets {
+                    user?.tweets = NSSet(array: tweets)
                     completion(nil, tweets)
+                } else {
+                    fatalError("Misconfiguration of TweetsAPIClient class")
                 }
                 
             })

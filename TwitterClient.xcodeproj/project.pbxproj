@@ -45,7 +45,6 @@
 		6F30ECD21F23579D00F59B25 /* TwitterLoginManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30ECD11F23579D00F59B25 /* TwitterLoginManagerTests.swift */; };
 		6F30ECD61F23622900F59B25 /* TwitterProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30ECD51F23622900F59B25 /* TwitterProviderFactory.swift */; };
 		6F3126C71F22838800091E67 /* TweetsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3126C61F22838800091E67 /* TweetsAPIClient.swift */; };
-		6F3126C91F22859600091E67 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3126C81F22859600091E67 /* SwiftyJSON.swift */; };
 		6F3126CB1F228AF400091E67 /* TweetsAPIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3126CA1F228AF400091E67 /* TweetsAPIClientTest.swift */; };
 		6F3126CD1F22A34D00091E67 /* TwitterUsersAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3126CC1F22A34D00091E67 /* TwitterUsersAPIClient.swift */; };
 		6F3126CF1F22A54B00091E67 /* TwitterUsersAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3126CE1F22A54B00091E67 /* TwitterUsersAPIClientTests.swift */; };
@@ -107,7 +106,6 @@
 		6F30ECD11F23579D00F59B25 /* TwitterLoginManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLoginManagerTests.swift; sourceTree = "<group>"; };
 		6F30ECD51F23622900F59B25 /* TwitterProviderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterProviderFactory.swift; sourceTree = "<group>"; };
 		6F3126C61F22838800091E67 /* TweetsAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsAPIClient.swift; sourceTree = "<group>"; };
-		6F3126C81F22859600091E67 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		6F3126CA1F228AF400091E67 /* TweetsAPIClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsAPIClientTest.swift; sourceTree = "<group>"; };
 		6F3126CC1F22A34D00091E67 /* TwitterUsersAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUsersAPIClient.swift; sourceTree = "<group>"; };
 		6F3126CE1F22A54B00091E67 /* TwitterUsersAPIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUsersAPIClientTests.swift; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				6F1EEB961F220B99008041EF /* Model */,
 				6F1EEB941F220B57008041EF /* View Controller */,
 				6F0CE7591F2225CB008BA821 /* UserInfoDataController.swift */,
-				6F3126C81F22859600091E67 /* SwiftyJSON.swift */,
 				41A884AC1F1E7708006C8658 /* TwitterLoginManager.swift */,
 				6F0CE75B1F2228ED008BA821 /* UsersDataController.swift */,
 				6F3126C61F22838800091E67 /* TweetsAPIClient.swift */,
@@ -453,7 +450,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8B5DFCDFAD5A75A7F6438F46 /* [CP] Embed Pods Frameworks */ = {
@@ -483,7 +480,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -497,7 +494,6 @@
 				41F974DB1F1D2BAA007DF386 /* UsersViewControllerFooter.swift in Sources */,
 				41F974E11F1D3E6E007DF386 /* UserInfoViewController.swift in Sources */,
 				6F30ECD61F23622900F59B25 /* TwitterProviderFactory.swift in Sources */,
-				6F3126C91F22859600091E67 /* SwiftyJSON.swift in Sources */,
 				41F974D91F1D2B15007DF386 /* String+Localization.swift in Sources */,
 				41A884AB1F1E7026006C8658 /* LoginViewController.swift in Sources */,
 				4132BA931F1FD4E500BCEAED /* TwitterAPIClient.swift in Sources */,

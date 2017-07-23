@@ -8,12 +8,13 @@
 
 import UIKit
 import CoreData
+import SwiftyJSON
 
 class TwitterUser: NSManagedObject {
     
-    convenience init(id: String, handle: String, name: String, bio: String? = nil, profilePicture: String? = nil, coverPhoto: String? = nil, tweets: [Tweet]? = nil) {
+    convenience init(id: String, handle: String, name: String, bio: String? = nil, profilePicture: String? = nil, coverPhoto: String? = nil, tweets: [Tweet]? = nil, inContext context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext ) {
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = context
         self.init(context: context)
         self.handle = handle
         self.name = name

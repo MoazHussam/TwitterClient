@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
         
@@ -14,8 +15,14 @@ class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
         didSet {
             nameLabel.text = tweeter?.name
             handleLabel.text = tweeter?.handle
-//            profileImageView.image = UIImage()
             bioTextView.text = tweeter?.bio
+            
+            if let urlString = tweeter?.profilePicture,
+                let url = URL(string: urlString) {
+                profileImageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "blank profile image"))
+            } else {
+                profileImageView.image = #imageLiteral(resourceName: "blank profile image")
+            }
 
         }
     }
@@ -29,6 +36,8 @@ class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
         textView.isEditable = false
         textView.isSelectable = false
         textView.isUserInteractionEnabled = false
+        textView.isScrollEnabled = false
+        textView.textAlignment = .natural
         return textView
     }()
     
@@ -42,12 +51,12 @@ class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
         
         backgroundColor = .brown
         
-        profileImageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 50, heightConstant: 50)
+        profileImageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 54, heightConstant: 54)
         nameLabel.anchor(top: profileImageView.topAnchor, leading: profileImageView.trailingAnchor, trailing: self.trailingAnchor, leadingConstant: 8, trailingConstant: -8)
         handleLabel.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: nameLabel.trailingAnchor)
-        bioTextView.anchor(top: handleLabel.bottomAnchor, leading: handleLabel.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, topConstant: -6, leadingConstant: -4)
+        bioTextView.anchor(top: handleLabel.bottomAnchor, leading: handleLabel.leadingAnchor, trailing: self.trailingAnchor, topConstant: -6, leadingConstant: -4)
+        bioTextView.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor).isActive = true
         separatorLineView.anchor(leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, heightConstant: 0.5)
-
         
     }
 

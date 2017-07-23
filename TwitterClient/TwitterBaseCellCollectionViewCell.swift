@@ -33,6 +33,8 @@ class TwitterBaseCellCollectionViewCell: BaseCollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 5
         imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 4
+        imageView.layer.borderColor = UIColor.white.cgColor
         imageView.backgroundColor = .purple
         return imageView
     }()

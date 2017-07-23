@@ -9,6 +9,7 @@
 import UIKit
 import TwitterKit
 import Moya
+import SwiftyJSON
 
 class TwitterLoginManager: TwitterAPIClient {
     
