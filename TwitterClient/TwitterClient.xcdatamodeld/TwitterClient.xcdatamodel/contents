@@ -9,6 +9,7 @@
     <entity name="TwitterUser" representedClassName=".TwitterUser" syncable="YES" codeGenerationType="category">
         <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="coverPhoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="following" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="handle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,6 +18,6 @@
     </entity>
     <elements>
         <element name="Tweet" positionX="-56" positionY="26" width="128" height="103"/>
-        <element name="TwitterUser" positionX="-279" positionY="-19" width="128" height="148"/>
+        <element name="TwitterUser" positionX="-279" positionY="-19" width="128" height="163"/>
     </elements>
 </model>

@@ -74,15 +74,19 @@ class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
         profileImageView.anchor(top: containerView.topAnchor, leading: containerView.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 54, heightConstant: 54)
         nameLabel.anchor(top: profileImageView.topAnchor, leading: profileImageView.trailingAnchor, trailing: containerView.trailingAnchor, leadingConstant: 8, trailingConstant: -8)
         handleLabel.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: nameLabel.trailingAnchor)
-        bioTextView.anchor(top: handleLabel.bottomAnchor, leading: handleLabel.leadingAnchor, trailing: containerView.trailingAnchor, topConstant: -6, leadingConstant: -4)
-        let bioBottomAnchor = bioTextView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        bioBottomAnchor.isActive = true
+        bioTextView.anchor(top: handleLabel.bottomAnchor, leading: handleLabel.leadingAnchor, bottom: containerView.bottomAnchor, trailing: containerView.trailingAnchor, topConstant: -6, leadingConstant: -4)
         separatorLineView.anchor(leading: containerView.leadingAnchor, bottom: containerView.bottomAnchor, trailing: containerView.trailingAnchor, heightConstant: 0.5)
         
     }
     
     func setWidthConstrant() {
-        cellWidthConstrant?.constant = UIScreen.main.bounds.size.width
+        
+        if cellWidthConstrant?.constant == 0 {
+            cellWidthConstrant?.constant = UIScreen.main.bounds.size.width
+        } else {
+            // should update constraint here
+        }
+        
     }
     
     override func layoutSubviews() {

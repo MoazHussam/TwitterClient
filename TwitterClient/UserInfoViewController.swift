@@ -101,6 +101,8 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
                         fatalError("UserInfoDataController class is misconfigured")
                     }
                     self.tweets = tweets
+                    print("Number of Tweets: \(Tweet.fetchAllTweets()?.count)")
+                    print("Number of Users: \(TwitterUser.fetchAllTwitterUsers()?.count) ")
                 }
             })
         } else {

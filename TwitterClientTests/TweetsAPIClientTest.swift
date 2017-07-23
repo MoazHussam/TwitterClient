@@ -68,11 +68,12 @@ class TweetsAPIClientTest: XCTestCase {
         
         let expectation = self.expectation(description: "wait for get tweets method")
         let sampleTweetText = "This is my first tweet"
-        let sampleDataDic = [Constants.TwitterAPI.ParameterKeys.text:sampleTweetText]
+        let sampleID = "123456789##"
+        let sampleDataDic = [Constants.TwitterAPI.ParameterKeys.text:sampleTweetText, Constants.TwitterAPI.ParameterKeys.id: sampleID]
         let sampleDataArr = [sampleDataDic, sampleDataDic]
         let sampleData = try? JSONSerialization.data(withJSONObject: sampleDataArr, options: .prettyPrinted)
         mockClient.webServiceProvider = self.getStubProvider(WithStatusCode: 200, withNetworkError: nil, andResponse: sampleData)
-        mockClient.getTweets(forUserID: "") { (error, tweets) in
+        mockClient.getTweets(forUserID: sampleID) { (error, tweets) in
             XCTAssertEqual(tweets!.first!.text, sampleTweetText)
             expectation.fulfill()
         }

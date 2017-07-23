@@ -21,9 +21,9 @@ class TweetsAPIClient: TwitterAPIClient {
             if let error = error {
                 completion(error, nil)
             } else if let resultData = resultData {
-                let data = try? JSON(data: resultData)
-                let tweets = data?.arrayValue.map({ (jsonTweet) -> Tweet in
-                    return Tweet(fromJsonObject: jsonTweet)
+                let data = JSON(data: resultData)
+                let tweets = data.arrayValue.map({ (jsonTweet) -> Tweet in
+                    return Tweet.initializeTweet(fromJsonObject: jsonTweet)
                 })
                 completion(nil, tweets)
             } else {

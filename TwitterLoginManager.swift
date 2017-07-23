@@ -87,7 +87,7 @@ class TwitterLoginManager: TwitterAPIClient {
         let store = Twitter.sharedInstance().sessionStore
         let session = store.session()
         if let session  = session {
-            user = TwitterUser(id: session.userID, handle: "", name: "")
+            user = TwitterUser.initializeTwitterUser(id: session.userID, handle: "", name: "")
         } else {
             user = nil
         }

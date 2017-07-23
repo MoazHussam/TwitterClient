@@ -20,7 +20,7 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
     }
     var user: TwitterUser? {
         didSet {
-            self.initializeData()
+            self.updateData()
         }
     }
     var dataController = UsersDataController()
@@ -100,7 +100,7 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
     
     // MARK: - Helper Methods
     
-    private func initializeData() {
+    private func updateData() {
         
         dataController.getFollowers(forUser: user) { (error, followers) in
             
@@ -111,6 +111,9 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
                     fatalError("UsersDataController class is misconfigured")
                 }
                 self.followers = followers
+                
+                print("Number of Tweets: \(Tweet.fetchAllTweets()?.count)")
+                print("Number of Users: \(TwitterUser.fetchAllTwitterUsers()?.count) ")
             }
             
         }

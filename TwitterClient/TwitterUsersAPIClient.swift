@@ -22,9 +22,11 @@ class TwitterUsersAPIClient: TwitterAPIClient {
             if let error = error {
                 completion(error, nil)
             } else if let resultData = resultData {
-                let data = try? JSON(data: resultData)
-                let followers = data?[Constants.TwitterAPI.ParameterKeys.users].arrayValue.map({ (follower) -> TwitterUser in
-                    return TwitterUser(fromJsonObject: follower)
+                let data = JSON(data: resultData)
+                let followers = data[Constants.TwitterAPI.ParameterKeys.users].arrayValue.map({ (follower) -> TwitterUser in
+                    let folower = TwitterUser.initializeTwitterUser(fromJsonObject: follower)
+                    folower.following = userID
+                    return folower
                 })
                 completion(nil, followers)
             } else {
