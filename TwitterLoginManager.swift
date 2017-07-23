@@ -34,20 +34,28 @@ class TwitterLoginManager: TwitterAPIClient {
             if let error = error {
                 completion(error)
             } else if let tokenData = result {
-                
-                if let json = try? JSON(data: tokenData) {
-                    Token.initialize(fromJsonObject: json)
-                    completion(nil)
-                } else {
-                    print("Can't parse token data")
-                    completion(.generalError)
-                }
-                
+                let json = JSON(data: tokenData)
+                Token.initialize(fromJsonObject: json)
+                completion(nil)
             }else {
                 fatalError("Misconfiguration of TwitterAPIClient class")
             }
             
         }
+    }
+    
+    func logOutCurrentUser() {
+        
+        let store = Twitter.sharedInstance().sessionStore
+        let session = store.session()
+
+        if let session = session {
+            store.logOutUserID(session.userID)
+            NotificationCenter.default.post(Constants.Notifications.userLoggedOut)
+        } else {
+            return
+        }
+        
     }
     
     @objc func userLoggedIn() {

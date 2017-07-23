@@ -101,7 +101,7 @@
 		4B342437007FD717CBB1DE93 /* Pods-TwitterClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.release.xcconfig"; sourceTree = "<group>"; };
 		67914B0A49369AB4E63CA865 /* Pods-TwitterClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.debug.xcconfig"; sourceTree = "<group>"; };
 		6F0CE7591F2225CB008BA821 /* UserInfoDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoDataController.swift; sourceTree = "<group>"; };
-		6F0CE75B1F2228ED008BA821 /* UsersDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDataController.swift; sourceTree = "<group>"; };
+		6F0CE75B1F2228ED008BA821 /* UsersDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersDataController.swift; path = ../UsersDataController.swift; sourceTree = "<group>"; };
 		6F30ECCD1F234DE700F59B25 /* AuthorizationPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationPlugin.swift; sourceTree = "<group>"; };
 		6F30ECCF1F234E1400F59B25 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		6F30ECD11F23579D00F59B25 /* TwitterLoginManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLoginManagerTests.swift; sourceTree = "<group>"; };
@@ -155,6 +155,7 @@
 			children = (
 				41F974B61F1D12AD007DF386 /* UsersViewController.swift */,
 				41F974B81F1D12DC007DF386 /* UserCollectionViewCell.swift */,
+				6F0CE75B1F2228ED008BA821 /* UsersDataController.swift */,
 				41F974D61F1D257E007DF386 /* UsersViewControllerHeader.swift */,
 				41F974DA1F1D2BAA007DF386 /* UsersViewControllerFooter.swift */,
 			);
@@ -189,17 +190,9 @@
 				41F9749D1F1D1142007DF386 /* Assets.xcassets */,
 				41F9749F1F1D1142007DF386 /* LaunchScreen.storyboard */,
 				41F974A21F1D1142007DF386 /* Info.plist */,
-				41F9749A1F1D1142007DF386 /* TwitterClient.xcdatamodeld */,
 				6F1EEB961F220B99008041EF /* Model */,
 				6F1EEB941F220B57008041EF /* View Controller */,
-				6F0CE7591F2225CB008BA821 /* UserInfoDataController.swift */,
-				41A884AC1F1E7708006C8658 /* TwitterLoginManager.swift */,
-				6F0CE75B1F2228ED008BA821 /* UsersDataController.swift */,
-				6F3126C61F22838800091E67 /* TweetsAPIClient.swift */,
-				6F3126CC1F22A34D00091E67 /* TwitterUsersAPIClient.swift */,
-				6F30ECCD1F234DE700F59B25 /* AuthorizationPlugin.swift */,
-				6F30ECCF1F234E1400F59B25 /* Token.swift */,
-				6F30ECD51F23622900F59B25 /* TwitterProviderFactory.swift */,
+				41F974E91F1D4B4A007DF386 /* TwitterBaseCellCollectionViewCell.swift */,
 				6F8DA6471F2511BC0078E9F8 /* Localizable.strings */,
 			);
 			path = TwitterClient;
@@ -235,6 +228,7 @@
 			children = (
 				41F974E01F1D3E6E007DF386 /* UserInfoViewController.swift */,
 				41F974E21F1D3EB9007DF386 /* UserInfoCollectionViewCell.swift */,
+				6F0CE7591F2225CB008BA821 /* UserInfoDataController.swift */,
 				41F974E71F1D4261007DF386 /* UserInfoViewControllerHeader.swift */,
 			);
 			name = "User Info Controller";
@@ -263,10 +257,14 @@
 		6F1EEB951F220B75008041EF /* Twitter API */ = {
 			isa = PBXGroup;
 			children = (
-				41F974E91F1D4B4A007DF386 /* TwitterBaseCellCollectionViewCell.swift */,
 				411D94C71F1E8AB1007E3F11 /* TwitterAPI.swift */,
 				4132BA921F1FD4E500BCEAED /* TwitterAPIClient.swift */,
 				4132BA941F1FD76A00BCEAED /* TwitterAPIDummyData.swift */,
+				6F3126C61F22838800091E67 /* TweetsAPIClient.swift */,
+				6F30ECCD1F234DE700F59B25 /* AuthorizationPlugin.swift */,
+				6F30ECCF1F234E1400F59B25 /* Token.swift */,
+				6F30ECD51F23622900F59B25 /* TwitterProviderFactory.swift */,
+				6F3126CC1F22A34D00091E67 /* TwitterUsersAPIClient.swift */,
 				4132BA961F1FD84D00BCEAED /* TwitterAPIError.swift */,
 			);
 			name = "Twitter API";
@@ -275,7 +273,9 @@
 		6F1EEB961F220B99008041EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				41F9749A1F1D1142007DF386 /* TwitterClient.xcdatamodeld */,
 				4132BA8C1F1FD36700BCEAED /* Tweet.swift */,
+				41A884AC1F1E7708006C8658 /* TwitterLoginManager.swift */,
 				4132BA8E1F1FD37E00BCEAED /* TwitterUser.swift */,
 				41F974D11F1D13BD007DF386 /* Extensions */,
 				41F974DC1F1D2BEF007DF386 /* Constants.swift */,

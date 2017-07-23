@@ -37,6 +37,13 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
         if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
         }
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout".localized, style: .plain, target: self, action: #selector(logOut(sender:)))
+        
+        NotificationCenter.default.addObserver(forName: Constants.Notifications.userLoggedOut.name, object: nil, queue: nil) { (notification) in
+            let rootVC = (UIApplication.shared.delegate as! AppDelegate).rootViewController
+            self.present(rootVC, animated: true, completion: nil)
+        }
 
     }
         
@@ -118,6 +125,10 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
             
         }
         
+    }
+    
+    @objc func logOut(sender: Any) {
+        TwitterLoginManager.shared.logOutCurrentUser()
     }
     
     private func showError(message: String) {
