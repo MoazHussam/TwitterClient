@@ -22,7 +22,7 @@ class UsersViewControllerFooter: BaseCollectionViewCell {
         
         addSubview(headerLable)
         
-        backgroundColor = .gray
+        backgroundColor = .white
 
         headerLable.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, leadingConstant: 12)
     }

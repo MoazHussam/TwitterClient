@@ -38,7 +38,7 @@ class UserInfoViewControllerHeader: TwitterBaseCellCollectionViewCell {
         let imageview = UIImageView()
         imageview.image = #imageLiteral(resourceName: "blank cover photo")
         imageview.contentMode = .scaleAspectFill
-        imageview.backgroundColor = .red
+//        imageview.backgroundColor = .red
         return imageview
     }()
     
@@ -46,7 +46,7 @@ class UserInfoViewControllerHeader: TwitterBaseCellCollectionViewCell {
         let textView = UITextView()
         textView.text = "Here goes the Biography of the users.\nSome users may leave this field empty.".localized
         textView.backgroundColor = .clear
-        textView.backgroundColor = .brown
+//        textView.backgroundColor = .brown
         textView.font = UIFont.systemFont(ofSize: 15)
         textView.isEditable = false
         textView.isSelectable = false
@@ -67,7 +67,11 @@ class UserInfoViewControllerHeader: TwitterBaseCellCollectionViewCell {
         addSubview(bioTextView)
         addSubview(separatorLineView)
         
-        backgroundColor = .blue
+        nameLabel.textColor = .white
+        bioTextView.textColor = .white
+        handleLabel.textColor = .white
+        
+//        backgroundColor = .blue
         
         coverPhoto.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, heightConstant: 100)
         profileImageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, topConstant: 20, leadingConstant: 12, widthConstant: 64, heightConstant: 64)

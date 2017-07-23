@@ -37,7 +37,7 @@ class UserInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
         let textView = UITextView()
         textView.text = "Here goes the Tweets of the users.\nSome users may leave this field empty."
         textView.backgroundColor = .clear
-        textView.backgroundColor = .cyan
+//        textView.backgroundColor = .cyan
         textView.font = UIFont.systemFont(ofSize: 15)
         textView.isEditable = false
         textView.isSelectable = false
@@ -48,7 +48,7 @@ class UserInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .brown
+//        view.backgroundColor = .brown
         return view
     }()
     
@@ -65,7 +65,7 @@ class UserInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
         containerView.anchor(widthConstant: UIScreen.main.bounds.size.width)
         containerView.fillSuperView()
         
-        backgroundColor = .orange
+        backgroundColor = .white
         
         profileImageView.anchor(top: containerView.topAnchor, leading: containerView.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 54, heightConstant: 54)
         nameLabel.anchor(top: profileImageView.topAnchor, leading: profileImageView.trailingAnchor, topConstant: 0, leadingConstant: 8)

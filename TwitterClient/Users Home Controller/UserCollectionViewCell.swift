@@ -37,7 +37,7 @@ class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
         let textView = UITextView()
         textView.text = "Here goes the biography of the users.\nSome users may leave this field empty."
         textView.backgroundColor = .clear
-        textView.backgroundColor = .orange
+//        textView.backgroundColor = .orange
         textView.font = UIFont.systemFont(ofSize: 15)
         textView.isEditable = false
         textView.isSelectable = false
@@ -49,7 +49,7 @@ class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .cyan
+//        view.backgroundColor = .cyan
         return view
     }()
     
@@ -66,7 +66,7 @@ class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
         containerView.addSubview(bioTextView)
         containerView.addSubview(separatorLineView)
         
-        backgroundColor = .brown
+//        backgroundColor = .brown
         
         cellWidthConstrant = containerView.anchorWithReturn(widthConstant: UIScreen.main.bounds.size.width).first
         containerView.fillSuperView()

@@ -13,7 +13,8 @@ class UsersViewControllerHeader: BaseCollectionViewCell {
     let headerLable: UILabel = {
         let label = UILabel()
         label.text = "FOLLOWERS".localized
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textColor = .white
         return label
     }()
     
@@ -28,7 +29,7 @@ class UsersViewControllerHeader: BaseCollectionViewCell {
         addSubview(headerLable)
         addSubview(separatorLineView)
         
-        backgroundColor = UIColor.green
+        backgroundColor = Constants.Colors.twitterBlue
         
         headerLable.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, leadingConstant: 12)
         separatorLineView.anchor(leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, heightConstant: 0.5)

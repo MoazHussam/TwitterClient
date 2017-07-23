@@ -102,21 +102,30 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
     
     private func updateData() {
         
-        dataController.getFollowers(forUser: user) { (error, followers) in
+        dataController.getFollowers(forUser: user) { [weak self] (error, followers) in
             
             if let error = error {
                 print("Retreaving followers failed with error: \(error)")
+                self?.showError(message: "Please try again".localized)
             } else {
                 guard let followers = followers else {
                     fatalError("UsersDataController class is misconfigured")
                 }
-                self.followers = followers
                 
-                print("Number of Tweets: \(Tweet.fetchAllTweets()?.count)")
-                print("Number of Users: \(TwitterUser.fetchAllTwitterUsers()?.count) ")
+                self?.followers = followers
+            
             }
             
         }
+        
+    }
+    
+    private func showError(message: String) {
+        
+        let alertController = UIAlertController(title: "Failed to retreive data".localized, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
         
     }
 

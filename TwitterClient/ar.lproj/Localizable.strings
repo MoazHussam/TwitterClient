@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  TwitterClient
+
+  Created by Moaz Ahmed on 7/23/17.
+  Copyright © 2017 Moaz Ahmed. All rights reserved.
+*/
+ "FOLLOWERS" = " المتابعون ";
+"Here goes the Biography of the users.\nSome users may leave this field empty." = "هنا يوجد الوصف الخاص بالمستخدم.\nبعض المستخدمين قد يتركوا هذا الحقل فارغا";
+"Show me more" = "أرني المزيد";
+"Please try again" = "من فضلك حاول مجددا";
+"Failed to retreive data" = "فشل جلب المتابعون";

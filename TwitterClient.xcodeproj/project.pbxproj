@@ -48,6 +48,7 @@
 		6F3126CB1F228AF400091E67 /* TweetsAPIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3126CA1F228AF400091E67 /* TweetsAPIClientTest.swift */; };
 		6F3126CD1F22A34D00091E67 /* TwitterUsersAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3126CC1F22A34D00091E67 /* TwitterUsersAPIClient.swift */; };
 		6F3126CF1F22A54B00091E67 /* TwitterUsersAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3126CE1F22A54B00091E67 /* TwitterUsersAPIClientTests.swift */; };
+		6F8DA6451F2511BC0078E9F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F8DA6471F2511BC0078E9F8 /* Localizable.strings */; };
 		DFA8145927B81BD56AA8FE50 /* Pods_TwitterClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C577CDADB0199720D76A7F9E /* Pods_TwitterClientTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,9 @@
 		6F3126CA1F228AF400091E67 /* TweetsAPIClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsAPIClientTest.swift; sourceTree = "<group>"; };
 		6F3126CC1F22A34D00091E67 /* TwitterUsersAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUsersAPIClient.swift; sourceTree = "<group>"; };
 		6F3126CE1F22A54B00091E67 /* TwitterUsersAPIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUsersAPIClientTests.swift; sourceTree = "<group>"; };
+		6F8DA63C1F250F770078E9F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6F8DA6461F2511BC0078E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6F8DA6481F2511BE0078E9F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7D565F5457C88281A571D733 /* Pods-TwitterClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClientTests/Pods-TwitterClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3AB3041DE56AAB0EDCABC21 /* Pods-TwitterClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClientTests/Pods-TwitterClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C577CDADB0199720D76A7F9E /* Pods_TwitterClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +200,7 @@
 				6F30ECCD1F234DE700F59B25 /* AuthorizationPlugin.swift */,
 				6F30ECCF1F234E1400F59B25 /* Token.swift */,
 				6F30ECD51F23622900F59B25 /* TwitterProviderFactory.swift */,
+				6F8DA6471F2511BC0078E9F8 /* Localizable.strings */,
 			);
 			path = TwitterClient;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 41F974871F1D1142007DF386;
 			productRefGroup = 41F974911F1D1142007DF386 /* Products */;
@@ -379,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41F974A11F1D1142007DF386 /* LaunchScreen.storyboard in Resources */,
+				6F8DA6451F2511BC0078E9F8 /* Localizable.strings in Resources */,
 				41F9749E1F1D1142007DF386 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,8 +559,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				41F974A01F1D1142007DF386 /* Base */,
+				6F8DA63C1F250F770078E9F8 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6F8DA6471F2511BC0078E9F8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F8DA6461F2511BC0078E9F8 /* Base */,
+				6F8DA6481F2511BE0078E9F8 /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -563,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -614,6 +632,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

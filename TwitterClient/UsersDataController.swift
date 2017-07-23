@@ -21,7 +21,7 @@ class UsersDataController {
                 completion(nil, cachedFollowers)
             }
             
-            usersClient.getFollowers(forUserID: userID, completion: { (error, tweeters) in
+            usersClient.getFollowers(forUserID: userID, count: 30, completion: { (error, tweeters) in
                 
                 if let error = error {
                     completion(error, nil)

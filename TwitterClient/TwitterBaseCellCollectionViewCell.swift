@@ -14,7 +14,7 @@ class TwitterBaseCellCollectionViewCell: BaseCollectionViewCell {
         var label = UILabel()
         label.text = "FirstName LastName"
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.backgroundColor = .red
+//        label.backgroundColor = .red
         return label
     }()
     
@@ -23,7 +23,7 @@ class TwitterBaseCellCollectionViewCell: BaseCollectionViewCell {
         label.text = "@username"
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = UIColor(colorLiteralRed: 130/256, green: 130/256, blue: 130/256, alpha: 1)
-        label.backgroundColor = .yellow
+//        label.backgroundColor = .yellow
         return label
     }()
     
@@ -35,7 +35,7 @@ class TwitterBaseCellCollectionViewCell: BaseCollectionViewCell {
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 4
         imageView.layer.borderColor = UIColor.white.cgColor
-        imageView.backgroundColor = .purple
+//        imageView.backgroundColor = .purple
         return imageView
     }()
     

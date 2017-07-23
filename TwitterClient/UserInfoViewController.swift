@@ -92,23 +92,31 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
     private func getTweets() {
         
         if let user = self.user {
-            dataController.tweets(forUser: user, completion: { (error, tweets) in
+            dataController.tweets(forUser: user, completion: { [weak self] (error, tweets) in
                 
                 if let error = error {
-                    print("Retreaving tweets failed")
+                    print("Retreaving tweets failed with error: \(error)")
+                    self?.showError(message: "Please try again".localized)
                 } else {
                     guard let tweets = tweets else {
                         fatalError("UserInfoDataController class is misconfigured")
                     }
-                    self.tweets = tweets
-                    print("Number of Tweets: \(Tweet.fetchAllTweets()?.count)")
-                    print("Number of Users: \(TwitterUser.fetchAllTwitterUsers()?.count) ")
+                    self?.tweets = tweets
                 }
             })
         } else {
             print("no tweeter is specified")
         }
         
+    }
+    
+    private func showError(message: String) {
+        
+        let alertController = UIAlertController(title: "Failed to retreive data".localized, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+
     }
 
 }
