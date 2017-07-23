@@ -15,6 +15,7 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
     var tweets: [Tweet]? {
         didSet {
             collectionView?.reloadData()
+            collectionViewLayout.invalidateLayout()
         }
     }
     var dataController = UserInfoDataController()
@@ -33,14 +34,14 @@ class UserInfoViewController: UICollectionViewController, UICollectionViewDelega
         collectionView?.registerHeaderClass(UserInfoViewControllerHeader.self)
         collectionView?.registerFooterClass(UsersViewControllerFooter.self)
         collectionView?.backgroundColor = UIColor.groupTableViewBackground
+        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+        }
+
     }
     
     // MARK: - CollectionView FlowLayout Delegate
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width, height: 100)
-    }
-    
+        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

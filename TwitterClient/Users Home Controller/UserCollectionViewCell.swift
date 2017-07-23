@@ -10,7 +10,13 @@ import UIKit
 import AlamofireImage
 
 class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
-        
+    
+    var cellWidthConstrant: NSLayoutConstraint?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     var tweeter: TwitterUser? {
         didSet {
             nameLabel.text = tweeter?.name
@@ -41,23 +47,47 @@ class UserCollectionViewCell: TwitterBaseCellCollectionViewCell {
         return textView
     }()
     
+    let containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .cyan
+        return view
+    }()
+    
     override func setupViews() {
+        
         backgroundColor = .white
-        addSubview(profileImageView)
-        addSubview(nameLabel)
-        addSubview(handleLabel)
-        addSubview(bioTextView)
-        addSubview(separatorLineView)
+        
+        self.constraints.forEach { $0.isActive = false }
+        
+        addSubview(containerView)
+        containerView.addSubview(profileImageView)
+        containerView.addSubview(nameLabel)
+        containerView.addSubview(handleLabel)
+        containerView.addSubview(bioTextView)
+        containerView.addSubview(separatorLineView)
         
         backgroundColor = .brown
         
-        profileImageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 54, heightConstant: 54)
-        nameLabel.anchor(top: profileImageView.topAnchor, leading: profileImageView.trailingAnchor, trailing: self.trailingAnchor, leadingConstant: 8, trailingConstant: -8)
-        handleLabel.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: nameLabel.trailingAnchor)
-        bioTextView.anchor(top: handleLabel.bottomAnchor, leading: handleLabel.leadingAnchor, trailing: self.trailingAnchor, topConstant: -6, leadingConstant: -4)
-        bioTextView.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor).isActive = true
-        separatorLineView.anchor(leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, heightConstant: 0.5)
+        cellWidthConstrant = containerView.anchorWithReturn(widthConstant: UIScreen.main.bounds.size.width).first
+        containerView.fillSuperView()
         
+        profileImageView.anchor(top: containerView.topAnchor, leading: containerView.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 54, heightConstant: 54)
+        nameLabel.anchor(top: profileImageView.topAnchor, leading: profileImageView.trailingAnchor, trailing: containerView.trailingAnchor, leadingConstant: 8, trailingConstant: -8)
+        handleLabel.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: nameLabel.trailingAnchor)
+        bioTextView.anchor(top: handleLabel.bottomAnchor, leading: handleLabel.leadingAnchor, trailing: containerView.trailingAnchor, topConstant: -6, leadingConstant: -4)
+        let bioBottomAnchor = bioTextView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        bioBottomAnchor.isActive = true
+        separatorLineView.anchor(leading: containerView.leadingAnchor, bottom: containerView.bottomAnchor, trailing: containerView.trailingAnchor, heightConstant: 0.5)
+        
+    }
+    
+    func setWidthConstrant() {
+        cellWidthConstrant?.constant = UIScreen.main.bounds.size.width
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setWidthConstrant()
     }
 
 }

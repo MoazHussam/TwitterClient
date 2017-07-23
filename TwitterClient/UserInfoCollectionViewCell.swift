@@ -45,25 +45,36 @@ class UserInfoCollectionViewCell: TwitterBaseCellCollectionViewCell {
         textView.isUserInteractionEnabled = false
         return textView
     }()
-        
+    
+    let containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .brown
+        return view
+    }()
+    
     override func setupViews() {
         
-        addSubview(profileImageView)
-        addSubview(nameLabel)
-        addSubview(handleLabel)
-        addSubview(tweetTextView)
-        addSubview(separatorLineView)
+        addSubview(containerView)
+        
+        containerView.addSubview(profileImageView)
+        containerView.addSubview(nameLabel)
+        containerView.addSubview(handleLabel)
+        containerView.addSubview(tweetTextView)
+        containerView.addSubview(separatorLineView)
+        
+        containerView.anchor(widthConstant: UIScreen.main.bounds.size.width)
+        containerView.fillSuperView()
         
         backgroundColor = .orange
         
-        profileImageView.anchor(top: self.topAnchor, leading: self.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 54, heightConstant: 54)
+        profileImageView.anchor(top: containerView.topAnchor, leading: containerView.leadingAnchor, topConstant: 12, leadingConstant: 12, widthConstant: 54, heightConstant: 54)
         nameLabel.anchor(top: profileImageView.topAnchor, leading: profileImageView.trailingAnchor, topConstant: 0, leadingConstant: 8)
         handleLabel.anchor(leading: nameLabel.trailingAnchor, leadingConstant: 8)
-        handleLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -8).isActive = true
+        handleLabel.trailingAnchor.constraint(lessThanOrEqualTo: containerView.trailingAnchor, constant: -8).isActive = true
         handleLabel.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor).isActive = true
-        tweetTextView.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: self.trailingAnchor, topConstant: -6, leadingConstant: -4, trailingConstant: -8)
-        tweetTextView.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -4).isActive = true
-        separatorLineView.anchor(leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, heightConstant: 0.5)
+        tweetTextView.anchor(top: nameLabel.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: containerView.trailingAnchor, topConstant: -6, leadingConstant: -4, trailingConstant: -8)
+        tweetTextView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -4).isActive = true
+        separatorLineView.anchor(leading: containerView.leadingAnchor, bottom: containerView.bottomAnchor, trailing: containerView.trailingAnchor, heightConstant: 0.5)
         
         
     }

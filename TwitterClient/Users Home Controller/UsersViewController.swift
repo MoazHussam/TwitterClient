@@ -15,6 +15,7 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
     var followers: [TwitterUser]? {
         didSet {
             self.collectionView?.reloadData()
+            self.collectionView?.collectionViewLayout.invalidateLayout()
         }
     }
     var user: TwitterUser? {
@@ -33,9 +34,12 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
         self.collectionView!.registerHeaderClass(UsersViewControllerHeader.self)
         self.collectionView!.registerFooterClass(UsersViewControllerFooter.self)
         collectionView?.backgroundColor = UIColor.groupTableViewBackground
+        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+        }
 
     }
-    
+        
     // MARK: - CollectionView Delegate FlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -71,11 +75,7 @@ class UsersViewController: UICollectionViewController, UICollectionViewDelegateF
         return cell
         
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 150)
-    }
-    
+        
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionElementKindSectionHeader {

@@ -22,6 +22,10 @@ extension UIView {
     }
     
     func anchor(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leadingConstant: CGFloat = 0, bottomConstant: CGFloat = 0, trailingConstant: CGFloat = 0, widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) {
+        _ = anchorWithReturn(top: top, leading: leading, bottom: bottom, trailing: trailing, topConstant: topConstant, leadingConstant: leadingConstant, bottomConstant: bottomConstant, trailingConstant: trailingConstant, widthConstant: widthConstant, heightConstant: heightConstant)
+    }
+    
+    func anchorWithReturn(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, topConstant: CGFloat = 0, leadingConstant: CGFloat = 0, bottomConstant: CGFloat = 0, trailingConstant: CGFloat = 0, widthConstant: CGFloat = 0, heightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         var anchors = [NSLayoutConstraint]()
@@ -51,6 +55,8 @@ extension UIView {
         }
         
         anchors.forEach { $0.isActive = true }
+        
+        return anchors
         
     }
     
